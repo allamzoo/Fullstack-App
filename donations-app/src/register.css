@@ -1,0 +1,102 @@
+/* Donor Registration Form Styles */
+
+.donor-registration {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.donor-registration h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Default text color */
+}
+
+/* Donor Registration text color in dark theme */
+.dark-theme .donor-registration h2 {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.donor-registration form {
+    display: flex;
+    flex-direction: column;
+}
+
+.donor-registration label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #333; /* Default text color */
+}
+
+/* Label text color in dark theme */
+.dark-theme .donor-registration label {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.donor-registration input[type="text"],
+.donor-registration input[type="email"],
+.donor-registration input[type="tel"],
+.donor-registration select,
+.donor-registration input[type="file"],
+.donor-registration input[type="password"] {
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #333; /* Default text color */
+}
+
+/* Text color in dark theme */
+.dark-theme .donor-registration input[type="text"],
+.dark-theme .donor-registration input[type="email"],
+.dark-theme .donor-registration input[type="tel"],
+.dark-theme .donor-registration select,
+.dark-theme .donor-registration input[type="file"],
+.dark-theme .donor-registration input[type="password"] {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.donor-registration button {
+    background-color: #fba2d7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    align-self: center;
+    width: 200px;
+}
+
+/* Dark theme styles */
+.dark-theme .donor-registration {
+    border-color: #555;
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .donor-registration input[type="text"],
+.dark-theme .donor-registration input[type="email"],
+.dark-theme .donor-registration input[type="tel"],
+.dark-theme .donor-registration select,
+.dark-theme .donor-registration input[type="file"],
+.dark-theme .donor-registration input[type="password"] {
+    background-color: #555;
+    border-color: #333;
+}
+
+/* Dark theme style for password input */
+.dark-theme .donor-registration input[type="password"] {
+    background-color: #555;
+    border-color: #333;
+    color: #fba2d7; /* Pink text color in dark theme */
+}

@@ -1,0 +1,102 @@
+/* Donor Registration Form Styles */
+
+.Organization-Registration {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.Organization-Registration h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Default text color */
+}
+
+/* Donor Registration text color in dark theme */
+.dark-theme .Organization-Registration h2 {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.Organization-Registration form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Organization-Registration label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #333; /* Default text color */
+}
+
+/* Label text color in dark theme */
+.dark-theme .Organization-Registration label {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.Organization-Registration input[type="text"],
+.Organization-Registration input[type="email"],
+.Organization-Registration input[type="tel"],
+.Organization-Registration select,
+.Organization-Registration input[type="file"],
+.Organization-Registration input[type="password"] {
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #333; /* Default text color */
+}
+
+/* Text color in dark theme */
+.dark-theme .Organization-Registration input[type="text"],
+.dark-theme .Organization-Registration input[type="email"],
+.dark-theme .Organization-Registration input[type="tel"],
+.dark-theme .Organization-Registration select,
+.dark-theme .Organization-Registration input[type="file"],
+.dark-theme .Organization-Registration input[type="password"] {
+    color: #fba2d7; /* Pink text color in dark theme */
+}
+
+.Organization-Registration button {
+    background-color: #fba2d7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    align-self: center;
+    width: 200px;
+}
+
+/* Dark theme styles */
+.dark-theme .Organization-Registration {
+    border-color: #555;
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .Organization-Registration input[type="text"],
+.dark-theme .Organization-Registration input[type="email"],
+.dark-theme .Organization-Registration input[type="tel"],
+.dark-theme .Organization-Registration select,
+.dark-theme .Organization-Registration input[type="file"],
+.dark-theme .Organization-Registration input[type="password"] {
+    background-color: #555;
+    border-color: #333;
+}
+
+/* Dark theme style for password input */
+.dark-theme .Organization-Registration input[type="password"] {
+    background-color: #555;
+    border-color: #333;
+    color: #fba2d7; /* Pink text color in dark theme */
+}
