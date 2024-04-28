@@ -1,0 +1,181 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center {
+  text-align: center;
+}
+
+.my-dropdown {
+  background-color: #FBA2D7;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.organization-dropdown,
+.donors-dropdown {
+  background-color: #FBA2D7;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.action-button {
+  background-color: #FBA2D7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.dark-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-dropdown {
+background-color: #FBA2D7;
+color: black;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.dark-dropdown option {
+background-color: #FBA2D7;
+color: black;
+}
+
+.action-button {
+background-color: #FBA2D7;
+color: black;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.action-button.dark {
+background-color: #FBA2D7;
+color: #000;
+}
+
+
+.logo {
+  width: 100px; /* Set the width */
+  height: 100px; /* Set the height */
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid #fff; /* Add a border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  
+  /* Positioning */
+  position: fixed; /* Position relative to the viewport */
+  top: 0px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  z-index: 999; /* Ensure it appears above other content */
+}
+.profile-view-button {
+  background-color: transparent; /* Make the button background transparent */
+  border: none; /* Remove border */
+  position: fixed; /* Position relative to the viewport */
+  top: 0px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  z-index: 999; /* Ensure it appears above other content */
+}
+/* Add styles for the top right corner buttons */
+.top-right-buttons {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 999;
+}
+
+.top-right-buttons button {
+  background-color: #FBA2D7;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.top-right-buttons button:last-child {
+  margin-bottom: 0;
+}
+/* Add styles for the light/dark theme button */
+.theme-button {
+  background-color: #FBA2D7;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  z-index: 999;
+}
+/* Add styles for the box buttons */
+/* Add styles for the box buttons */
+.box-button {
+  background-color: #FBA2D7;
+  color: black; /* Change text color to black */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.box-button:last-child {
+  margin-bottom: 0;
+}
+
+.name-change-box {
+  position: absolute;
+  top: 300px; /* Adjust this value based on your layout */
+  right: 0px;
+  background-color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+.dropdown {
+  position: relative; /* Ensure the name change box is positioned relative to this element */
+}
+/* CSS for the home page text container */
+.home-page-text-container {
+  background-color: #FBA2D7;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  padding: 10px 20px;
+}

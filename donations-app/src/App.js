@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ViewOrganizations from './Admin Portal'; // Assuming ViewOrganizations is the correct name of the component
+import './Admin Portalc.css'; // Correcting the import statement for the CSS file
+import viewOrganizations from './Admin Portal';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <viewOrganizations />
       </header>
     </div>
   );
 }
+/*function viewOrganizations() {
+  return (
+      <button className="my-button">
+       View Organization List
+      </button>
+  );
+}*/
 
-export default App;
+export default viewOrganizations;
+
