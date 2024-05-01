@@ -12,13 +12,6 @@ function App() {
     </div>
   );
 }
-/*function viewOrganizations() {
-  return (
-      <button className="my-button">
-       View Organization List
-      </button>
-  );
-}*/
 
 export default viewOrganizations;
 
