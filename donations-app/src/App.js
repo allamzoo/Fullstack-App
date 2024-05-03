@@ -1,17 +1,16 @@
+// App.js
 import React from 'react';
-import ViewOrganizations from './Admin Portal'; // Assuming ViewOrganizations is the correct name of the component
-import './Admin Portalc.css'; // Correcting the import statement for the CSS file
-import viewOrganizations from './Admin Portal';
+import Homepage from './homepage'; // Importing Homepage component from Homepage.js
+import './App.css'; // Importing CSS file for styling
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <viewOrganizations />
+        <Homepage />
       </header>
     </div>
   );
 }
 
-export default viewOrganizations;
-
+export default App;
