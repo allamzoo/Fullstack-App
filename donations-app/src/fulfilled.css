@@ -1,0 +1,52 @@
+/* notfi.css */
+
+.notification-container {
+    width: 100vw; /* Ensure the container fills the screen horizontally */
+    height: 100vh; /* Ensure the container fills the screen vertically */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align text */
+    justify-content: center; /* Center align vertically */
+  }
+  
+  .notification-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .notification-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%; /* Ensure boxes span the width of the container */
+  }
+  
+  .notification-message {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .notification-timestamp {
+    color: #666;
+    font-size: 0.8rem;
+  }
+  
+  .light-theme {
+    background-color: #ffffff; /* Light theme background color */
+    color: #ff69b4; /* Pink text color */
+  }
+  
+  .dark-theme {
+    background-color: #000000; /* Dark theme background color */
+    color: #ff69b4; /* Pink text color */
+  }
+  
+  .theme-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  

@@ -1,0 +1,75 @@
+/* upload.css with styles for light and dark themes */
+.full-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .light-theme {
+    background-color: #ffffff; /* White background for light theme */
+    color: #333333; /* Dark text color for light theme */
+  }
+  
+  .dark-theme {
+    background-color: #000000; /* Black background for dark theme */
+    color: #fba2d7; /* Pink text color for dark theme */
+  }
+  .logo-bar {
+    background-color: #fba2d7;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    padding: 10px 20px;
+    width: 100%; /* Set the width to 100% to span the entire page */
+    height: 115px; /* Adjust the height as needed */
+    position: fixed; /* Position the bar fixed at the top */
+    top: 0; /* Align the bar to the top of the screen */
+  }
+  
+  /* Adjust the size and margin of the logo */
+  .logo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    position: absolute; /* Position the logo absolutely within the bar */
+    top: -400%; /* Align the top of the logo to the middle of the bar */
+    left: 50%;  /* Align the left side of the logo to the middle of the bar */
+    
+  }
+  
+  .file-input label {
+    display: block;
+    margin-bottom: 10px; /* Add margin for separation */
+  }
+  
+  .file-input input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+  }
+  
+  .content-wrapper {
+    padding: 20px; /* Padding for inner content */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition when toggling themes */
+  }
+  
+  .content-wrapper h2 {
+    margin-bottom: 20px; /* Margin for separation */
+    font-size: 1.5rem; /* Font size for heading */
+  }
+
+  
