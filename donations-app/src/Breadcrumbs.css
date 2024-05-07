@@ -1,0 +1,12 @@
+.breadcrumbs {
+    padding: 10px;
+    background-color: #fba2d7;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .breadcrumbs span {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,169 @@
+.full-screen {
+  height: 100vh;
+  width: 100vw; /* Full viewport width */
+  padding: 20px; /* Padding for the outer container */
+  display: flex; /* Flex layout */
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  position: relative; /* Relative positioning for child elements */
+}
+
+/* Top bar styling */
+.top-bar {
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Space between left and right */
+  align-items: center; /* Vertical alignment */
+  padding: 10px 20px; /* Padding for the top bar */
+  width: 100%; /* Full width */
+  height: 115px; /* Set height */
+  background-color: #fba2d7; /* Light pink background */
+  position: fixed; /* Fix at the top */
+  top: 0; /* Position at the top */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Flexbox for the top bar buttons */
+.top-bar-buttons {
+  display: flex; /* Align elements horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Logo styling */
+.top-left-logo {
+  width: 605px; /* Width of the logo */
+  height: 125px; /* Height of the logo */
+  position: absolute; /* Absolute position */
+  left: 200px; /* Logo remains in its original position */
+}
+
+/* Toggle Theme button styling */
+/* Theme switch button styling */
+.theme-switch {
+  margin-bottom: 20px;
+  position: relative; /* Relative positioning */
+  display: inline-block; /* Inline-block layout */
+  width: 60px; /* Width of the switch */
+  height: 34px; /* Height of the switch */
+  border-radius: 9999px; /* High value for rounded corners */
+}
+
+.theme-switch input {
+  display: none; /* Hide the checkbox input */
+}
+
+.slider {
+  color:#ccc;
+  position: absolute; /* Absolute positioning for the slider */
+  cursor: pointer; /* Pointer cursor */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s; /* Smooth transitions for toggle */
+  border-radius: 9999px; /* Rounded corners to create half-circle shape */
+}
+
+/* Color based on theme */
+.light-theme .slider {
+  background-color: #ccc; /* Lighter color for light mode */
+}
+
+.dark-theme .slider {
+  background-color: #333; /* Darker color for dark mode */
+}
+
+.slider:before {
+  position: absolute; /* Absolute positioning */
+  content: ''; /* Content-less */
+  height: 26px; /* Height of the inner slider */
+  width: 26px; /* Width of the inner slider */
+  left: 4px;
+  bottom: 4px;
+  background-color: white; /* White color for the inner slider */
+  transition: 0.4s; /* Smooth transitions */
+  border-radius: 50%; /* Circular inner slider */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Translate when checked */
+}
+
+/* Home button styling */
+.home-button {
+  padding: 10px 20px; /* Consistent padding */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #333; /* Same as Toggle Theme */
+  color: white; /* White text */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Content wrapper */
+.content-wrapper {
+  width: 80%; /* Form wrapper size */
+  max-width: 600px; /* Maximum width for the form */
+  text-align: left; /* Default text alignment */
+  padding: 20px; /* Padding for the content */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions for theme changes */
+}
+
+/* Input group styling */
+.input-group {
+  margin-bottom: 15px; /* Space between input groups */
+}
+
+/* Label styling */
+.input-group label {
+  display: block; /* Display labels as block elements */
+  font-size: 1rem; /* Consistent font size for labels */
+}
+
+/* Form elements styling */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%; /* Full-width form elements */
+  padding: 10px; /* Consistent padding */
+  box-sizing: border-box; /* Consistent box-sizing */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px; /* Consistent padding for buttons */
+  font-size: 1rem; /* Consistent font size */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  color: white; /* White text */
+}
+
+/* Light theme button styling */
+.light-theme button {
+  background-color: #fba2d7; /* Blue for light theme */
+  color: white; /* White text */
+}
+
+/* Dark theme button styling */
+.dark-theme button {
+  background-color: #fba2d7; /* Pinkish background for dark theme */
+  color: white; /* Dark text */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  opacity: 0.8; /* Slight transparency on hover */
+}
+.light-theme {
+  background-color: white; /* Blue for light theme */
+  color: 333; /* White text */
+}
+
+/* Dark theme button styling */
+.dark-theme {
+  background-color: #333; /* Pinkish background for dark theme */
+  color: #fba2d7; /* Dark text */
+}
