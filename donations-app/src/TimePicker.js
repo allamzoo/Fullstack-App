@@ -1,37 +1,28 @@
 // TimePicker.js
-import React, { useState } from 'react';
-import './App.css';
+
+import React from 'react';
 
 const TimePicker = ({ selectedTimeSlot, onChange }) => {
-  // Generate time slots (AM and PM)
-  const timeSlots = [
-    '12:00 AM', '12:30 AM', '1:00 AM', '1:30 AM', '2:00 AM', '2:30 AM', '3:00 AM', '3:30 AM',
-    '4:00 AM', '4:30 AM', '5:00 AM', '5:30 AM', '6:00 AM', '6:30 AM', '7:00 AM', '7:30 AM',
-    '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
-    '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM',
-    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM',
-    '8:00 PM', '8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM'
+  // Define time slot options
+  const timeSlotOptions = [
+    { value: '9-11 am', label: '9-11 am' },
+    { value: '11 am - 1 pm', label: '11 am - 1 pm' },
+    { value: '1-3 pm', label: '1-3 pm' },
+    { value: '3-5 pm', label: '3-5 pm' },
+    { value: '5-7 pm', label: '5-7 pm' },
   ];
 
-  const handleTimeChange = (e) => {
-    onChange(e.target.value);
-  };
-
   return (
-    <div className="time-picker">
-      <input
-        type="text"
-        list="time-slots"
-        value={selectedTimeSlot}
-        onChange={handleTimeChange}
-        placeholder="Select time"
-      />
-      <datalist id="time-slots">
-        {timeSlots.map((time, index) => (
-          <option key={index} value={time} />
-        ))}
-      </datalist>
-    </div>
+    <select
+      id="time-slot"
+      value={selectedTimeSlot}
+      onChange={(e) => onChange(e.target.value)}
+    >
+      <option value="">Select time slot</option>
+      {timeSlotOptions.map(option => (
+        <option key={option.value} value={option.value}>{option.label}</option>
+      ))}
+    </select>
   );
 };
 

@@ -5,6 +5,11 @@ import SubjectAndClassSelection from './SubjectAndClassSelection';
 import logo from './logo.png'; // Import the logo image
 import Login from './login';
 import HomeScreen from './HomeScreen';
+import HomeScreenDR from './HomeScreenDR';
+import HomeScreenT from './HomeScreenT';
+import UpdateAccount from './UpdateAccount';
+import HospitalLocationsPage from './HospitalLocationsPage';
+
 
 function App() {
   return (

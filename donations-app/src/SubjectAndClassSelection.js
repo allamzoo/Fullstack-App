@@ -5,7 +5,6 @@ import './SubjectAndClassSelection.css'; // Import the CSS file for styles
 function SubjectAndClassSelection() {
   const [teachingData, setTeachingData] = useState({
     subjects: '',
-    proBonoClasses: 0,
     proBonoStudents: 0
   });
 
@@ -16,8 +15,14 @@ function SubjectAndClassSelection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., sending data to backend
-    console.log('Teaching data submitted:', teachingData);
+    // Check if required fields are filled out
+    if (teachingData.subjects.trim() === '' || teachingData.proBonoStudents === 0) {
+      alert('Please fill out all required fields.');
+    } else {
+      // Handle form submission, e.g., sending data to backend
+      console.log('Teaching data submitted:', teachingData);
+      alert('Teaching data submitted successfully!');
+    }
   };
 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -56,25 +61,13 @@ function SubjectAndClassSelection() {
           <div className="input-container">
             <input
               type="number"
-              placeholder="Pro-bono Classes"
+              placeholder="Pro-bono Students"
               className="input-field"
-              name="proBonoClasses"
-              value={teachingData.proBonoClasses}
+              name="proBonoStudents"
+              value={teachingData.proBonoStudents}
               onChange={handleInputChange}
             />
           </div>
-          <div className="input-container">
-    <input
-        type="text"
-        placeholder="Subjects"
-        className={`input-field ${isDarkTheme ? 'dark-theme' : ''}`}
-        name="subjects"
-        value={teachingData.subjects}
-        onChange={handleInputChange}
-    />
-</div>
-
-          
           <button type="submit" className="submit-button">
             Submit
           </button>

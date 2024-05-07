@@ -1,12 +1,18 @@
+// DonationPopup.js
+
 import React, { useState } from 'react';
 import './HomeScreen.css';
 import TimePicker from './TimePicker';
 import ETANotification from './ETANotification';
+import PickupConfirmation from './PickupConfirmation';
+import DriverArrivalNotification from './DriverArrivalNotification';
 
 const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) => {
   const [selectedTransportation, setSelectedTransportation] = useState('');
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
   const [showETA, setShowETA] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false); // State for pickup confirmation
+  const [showDriverArrival, setShowDriverArrival] = useState(false); // State for driver arrival notification
   const [eta, setETA] = useState('');
 
   const handleTransportationChange = (e) => {
@@ -26,14 +32,19 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
   };
 
   const handleConfirm = () => {
-    onClose();
+    setShowConfirmation(true); // Show pickup confirmation
   };
 
   const handleViewETA = () => {
     setShowETA(true); // Show ETA notification
   };
+  
   const handleCloseETA = () => {
     setShowETA(false); // Hide ETA notification
+  };
+
+  const handleDriverArrival = () => {
+    setShowDriverArrival(true); // Show driver arrival notification
   };
 
   return (
@@ -41,16 +52,16 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
       <div className="popup-content">
         <span className="close" onClick={onClose}>&times;</span>
         <h2>Donation Pickup</h2>
-        <div className="custom-dropdown">
-    <select
-      id="transportation"
-      value={selectedTransportation}
-      onChange={handleTransportationChange}
-    >
-      <option value="">Select transportation</option>
-      {transportationOptions.map(option => (
-        <option key={option} value={option}>{option}</option>
-      ))}
+        <div className="custom-dropdown"> {/* Apply custom-dropdown class */}
+          <select
+            id="transportation"
+            value={selectedTransportation}
+            onChange={handleTransportationChange}
+          >
+            <option value="">Select transportation</option>
+            {transportationOptions.map(option => (
+              <option key={option} value={option}>{option}</option>
+            ))}
           </select>
         </div>
         <div className="form-group">
@@ -58,13 +69,20 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
           <TimePicker
             selectedTimeSlot={selectedTimeSlot}
             onChange={handleTimeSlotChange}
-            
           />
         </div>
         <button className="eta-button" onClick={handleViewETA}>View ETA</button>
         <button className="confirm-button" onClick={handleConfirm}>Confirm Donation</button>
         {showETA && <ETANotification eta={eta} onClose={handleCloseETA} />} {/* Render ETA notification if showETA is true */}
-      
+        {showConfirmation && (
+          <PickupConfirmation
+            onClose={() => {
+              setShowConfirmation(false);
+              handleDriverArrival(); // Trigger driver arrival notification after closing confirmation pop-up
+            }}
+          />
+        )} {/* Render Pickup Confirmation if showConfirmation is true */}
+        {showDriverArrival && <DriverArrivalNotification onClose={() => setShowDriverArrival(false)} />} {/* Render Driver Arrival Notification if showDriverArrival is true */}
       </div>
     </div>
   );

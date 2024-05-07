@@ -355,6 +355,91 @@ select {
 .confirm-button:hover, .eta-button:hover {
   background-color: #790a5f;
 }
+/* HomeScreen.css */
+
+/* Custom dropdown styles */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.custom-dropdown select {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* Remove default arrow icon */
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.custom-dropdown select:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #fba2d7; /* Change border color on focus */
+}
+
+.custom-dropdown::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333; /* Arrow color */
+}
+.driver-arrived-popup {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; /* Dark background color */
+  color: #fba2d7; /* Pink color for text in dark mode */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* Set a higher z-index value */
+}
+
+.driver-arrived-popup p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.driver-arrived-popup .close-button {
+  background-color: #fba2d7; /* Pink background color */
+  color: #fff; /* White text color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.driver-arrived-popup .close-button:hover {
+  background-color: #790a5f; /* Darker pink background color on hover */
+}
+.custom-button {
+  background-color: #fba2d7; /* Pink background color */
+  color: #fff; /* White text color */
+  padding: 15px; /* Adjust padding as needed */
+  margin: 5px; /* Adjust margin as needed */
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.custom-button:hover {
+  background-color: #790a5f; /* Darker pink background color on hover */
+}
+
+
+
+
+
+
 
 
 

@@ -8,7 +8,8 @@ function ClinicLocation() {
     area: '',
     governorate: '',
     specialty: '',
-    proBonoCases: 0
+    proBonoCases: 0,
+    locationUrl: '' // Add a new field for location URL
   });
 
   const handleInputChange = (e) => {
@@ -18,8 +19,14 @@ function ClinicLocation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Check if any required field is empty
+    if (!clinicData.address || !clinicData.area || !clinicData.governorate || !clinicData.specialty || !clinicData.proBonoCases || !clinicData.locationUrl) {
+      alert('Please fill out all fields.'); // Display alert if any required field is missing
+      return;
+    }
     // Handle form submission, e.g., sending data to backend
     console.log('Clinic data submitted:', clinicData);
+    alert('Data submitted successfully!');
   };
 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -92,6 +99,16 @@ function ClinicLocation() {
               className="input-field"
               name="proBonoCases"
               value={clinicData.proBonoCases}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Location URL"
+              className="input-field"
+              name="locationUrl"
+              value={clinicData.locationUrl}
               onChange={handleInputChange}
             />
           </div>

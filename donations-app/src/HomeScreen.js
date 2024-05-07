@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.png';
 import './HomeScreen.css';
 import DonationPopup from './DonationPopup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTshirt, faChessKnight, faUtensils, faCapsules, faSchool, faTint } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const HomeScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -11,7 +15,8 @@ const HomeScreen = () => {
   const [schoolSuppliesFilters, setSchoolSuppliesFilters] = useState({ type: '' });
   const [toyFilters, setToyFilters] = useState({ age: '', gender: '', toyCategory: '' });
   const [foodFilters, setFoodFilters] = useState({ type: '' });
-  const [medicalSuppliesFilters, setMedicalSuppliesFilters] = useState({ type: '' });
+  const [medicalSuppliesFilters, setMedicalSuppliesFilters] = useState({ type: '', medicationUse: '' });
+
   const [bloodFilters, setBloodFilters] = useState({ hospital: '', governorate: '', area: '' });
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,14 +25,20 @@ const HomeScreen = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const availableTimeSlots = ['Morning', 'Afternoon', 'Evening']; // Define available time slots
   const transportationOptions = ['Truck', 'Car', 'Motorcycle']; // Define transportation options
+  
 
   
 
   useEffect(() => {
-    setButtonsRendered(true);
     setDonationItemsState(donationItems);
   }, []);
-
+  
+  useEffect(() => {
+    setButtonsRendered(true);
+  }, []);
+  
+  // Rest of your code...
+  
   const handleCategorySelection = (category) => {
     setSelectedCategory(category.toLowerCase());
     setSearchQuery('');
@@ -136,55 +147,63 @@ const HomeScreen = () => {
     { id: 1, name: 'Winter Jacket', category: 'Clothes', age: 'Adult', gender: 'Unisex', season: 'Winter', description: 'Warm winter jacket for adults', quantity: 10, quantitySelected: 0 },
     
     { id: 2, name: 'LEGO Set', category: 'Toys', toyCategory: 'Building Blocks', description: 'LEGO set for children aged 6-12', quantity: 5, quantitySelected: 0 },
-    { id: 3, name: 'Canned Soup', category: 'Food', description: 'Canned soup for emergency food aid', quantity: 20, quantitySelected: 0 },
+    { id: 3, name: 'Canned Soup', category: 'Food', description: 'Canned soup for emergency food aid',type: 'Canned Foods', quantity: 20, quantitySelected: 0 },
     { id: 4, name: 'Math Workbook', category: 'School Supplies', type: 'Books', description: 'Math workbook for primary school students', quantity: 15, quantitySelected: 0 },
     { id: 5, name: 'Drawing Pencils', category: 'School Supplies', type: 'Stationary', description: 'Set of drawing pencils for art classes', quantity: 30, quantitySelected: 0 },
     { id: 6, name: 'Board Game', category: 'Toys', age: 'Child', gender: 'Unisex', toyCategory: 'Board Games', description: 'Classic board game for children', quantity: 8, quantitySelected: 0 },
     { id: 7, name: 'Stethoscope', category: 'Medical Supplies', type: 'Medical Devices', description: 'Stethoscope for medical examinations', quantity: 10, quantitySelected: 0 },
     { id: 8, name: 'X-ray Machine', category: 'Medical Supplies', type: 'Medical Equipment', description: 'X-ray machine for diagnostic imaging', quantity: 5, quantitySelected: 0 },
-    { id: 9, name: 'Pain Reliever', category: 'Medical Supplies', type: 'Medication', description: 'Pain reliever medication for various conditions', quantity: 30, quantitySelected: 0 },
+    { id: 9, name: 'Pain Reliever', category: 'Medical Supplies', type: 'Medication', medicationUse: 'Pain Relief', description: 'Pain reliever medication for various conditions', quantity: 30, quantitySelected: 0 },
     // Blood donation items
     { id: 10, name: 'O- Blood Type', category: 'Blood Donations', hospital: 'Hospital A', governorate: 'Governorate X', area: 'Area Y', description: 'Blood type O- urgently needed', quantity: 5, quantitySelected: 0 },
     { id: 11, name: 'A+ Blood Type', category: 'Blood Donations', hospital: 'Hospital B', governorate: 'Governorate Y', area: 'Area Z', description: 'Blood type A+ urgently needed', quantity: 7, quantitySelected: 0 },
     { id: 12, name: 'Summer Jacket', category: 'Clothes', age: 'Child', gender: 'Male', season: 'Summer', description: 'Thin summer jacket for adults', quantity: 15, quantitySelected: 0 },
+    { id: 13, name: 'Antibiotic', category: 'Medical Supplies', type: 'Medication', medicationUse: 'Antibiotics', description: 'Antibiotic medication for infections', quantity: 25, quantitySelected: 0 },
+// Add more medication items for testing with different medication uses
   ];
 
- const filteredItems = donationItemsState.filter((item) => {
-  const searchMatch = !searchQuery || item.name.toLowerCase().includes(searchQuery);
-  const categoryMatch = !selectedCategory || item.category.toLowerCase() === selectedCategory.toLowerCase();
-  const clothesFilterMatch = categoryMatch && (
-    (!clothesFilters.age || item.age === clothesFilters.age) &&
-    (!clothesFilters.gender || item.gender === clothesFilters.gender) &&
-    (!clothesFilters.season || item.season === clothesFilters.season)
-  );
-  const schoolSuppliesFilterMatch = categoryMatch && (
-    (!schoolSuppliesFilters.type || item.type === schoolSuppliesFilters.type)
-  );
-  const toyFilterMatch = categoryMatch && (
-    (!toyFilters.age || item.age === toyFilters.age) &&
-    (!toyFilters.gender || item.gender === toyFilters.gender) &&
-    (!toyFilters.toyCategory || item.toyCategory === toyFilters.toyCategory)
-  );
-  const foodFilterMatch = categoryMatch && (
-    (!foodFilters.type || item.type === foodFilters.type)
-  );
-  const medicalSuppliesFilterMatch = categoryMatch && (
-    (!medicalSuppliesFilters.type || item.type === medicalSuppliesFilters.type)
-  );
-  const bloodFilterMatch = categoryMatch && (
-    (!bloodFilters.hospital || item.hospital.toLowerCase().includes(bloodFilters.hospital.toLowerCase())) &&
-    (!bloodFilters.governorate || item.governorate.toLowerCase().includes(bloodFilters.governorate.toLowerCase())) &&
-    (!bloodFilters.area || item.area.toLowerCase().includes(bloodFilters.area.toLowerCase()))
-  );
-  return searchMatch && (
-    (selectedCategory === 'Clothes' && clothesFilterMatch) ||
-    (selectedCategory === 'School Supplies' && schoolSuppliesFilterMatch) ||
-    (selectedCategory === 'Toys' && toyFilterMatch) ||
-    (selectedCategory === 'Food' && foodFilterMatch) ||
-    (selectedCategory === 'Medical Supplies' && medicalSuppliesFilterMatch) ||
-    (selectedCategory === 'Blood Donations' && bloodFilterMatch)
-  );
-});
+  const filteredItems = donationItemsState.filter((item) => {
+    const categoryMatch = !selectedCategory || item.category.toLowerCase() === selectedCategory.toLowerCase();
+    const searchMatch = !searchQuery || item.category.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const clothesFilterMatch = categoryMatch && (
+      (!clothesFilters.age || item.age === clothesFilters.age) &&
+      (!clothesFilters.gender || item.gender === clothesFilters.gender) &&
+      (!clothesFilters.season || item.season === clothesFilters.season)
+    );
+    const schoolSuppliesFilterMatch = categoryMatch && (
+      (!schoolSuppliesFilters.type || item.type === schoolSuppliesFilters.type)
+    );
+    const toyFilterMatch = categoryMatch && (
+      (!toyFilters.age || item.age === toyFilters.age) &&
+      (!toyFilters.gender || item.gender === toyFilters.gender) &&
+      (!toyFilters.toyCategory || item.toyCategory === toyFilters.toyCategory)
+    );
+    const foodFilterMatch = categoryMatch && (
+      (!foodFilters.type || item.type === foodFilters.type)
+    );
+    const medicalSuppliesFilterMatch = categoryMatch && (
+      (!medicalSuppliesFilters.type || item.type === medicalSuppliesFilters.type) &&
+      (!medicalSuppliesFilters.medicationUse || item.medicationUse === medicalSuppliesFilters.medicationUse)
+    );
+    
+    const bloodFilterMatch = categoryMatch && (
+      (!bloodFilters.hospital || item.hospital.toLowerCase().includes(bloodFilters.hospital.toLowerCase())) &&
+      (!bloodFilters.governorate || item.governorate.toLowerCase().includes(bloodFilters.governorate.toLowerCase())) &&
+      (!bloodFilters.area || item.area.toLowerCase().includes(bloodFilters.area.toLowerCase()))
+    );
+    
+    return searchMatch && (
+      (!selectedCategory) ||
+      (selectedCategory === 'Clothes' && clothesFilterMatch) ||
+      (selectedCategory === 'School Supplies' && schoolSuppliesFilterMatch) ||
+      (selectedCategory === 'Toys' && toyFilterMatch) ||
+      (selectedCategory === 'Food' && foodFilterMatch) ||
+      (selectedCategory === 'Medical Supplies' && medicalSuppliesFilterMatch) ||
+      (selectedCategory === 'Blood Donations' && bloodFilterMatch)
+    );
+  });
+  
 
 
   return (
@@ -201,7 +220,7 @@ const HomeScreen = () => {
           />
           <div className="slider round"></div>
         </label>
-        {/* Added buttons */}
+        
         
       </div>
       <div className="search-bar">
@@ -212,6 +231,11 @@ const HomeScreen = () => {
           onChange={handleSearchChange}
         />
       </div>
+      <div className="buttons-container">
+    <button className="custom-button">View Registered Organizations</button>
+    <button className="custom-button">View Hospital Locations</button>
+    
+  </div>
       <div className="categories">
         <h2>Categories</h2>
         <div className="category-buttons">
@@ -222,12 +246,36 @@ const HomeScreen = () => {
                 className={selectedCategory === category ? 'selected' : ''}
                 onClick={() => handleButtonClick(category)}
               >
-                {category === 'Clothes' && '👕 Clothes'}
-                {category === 'Toys' && '🧸 Toys'}
-                {category === 'Food' && '🍲 Food'}
-                {category === 'Medical Supplies' && '⚕️ Medical Supplies'}
-                {category === 'School Supplies' && '📚 School Supplies'}
-                {category === 'Blood Donations' && '💉 Blood Donations'}
+                {category === 'Clothes' && (
+    <>
+      <FontAwesomeIcon icon={faTshirt} /> Clothes
+    </>
+  )}
+               {category === 'Toys' && (
+    <>
+      <FontAwesomeIcon icon={faChessKnight} /> Toys
+    </>
+  )}
+  {category === 'Food' && (
+    <>
+      <FontAwesomeIcon icon={faUtensils} /> Food
+    </>
+  )}
+  {category === 'Medical Supplies' && (
+    <>
+      <FontAwesomeIcon icon={faCapsules} /> Medical Supplies
+    </>
+  )}
+  {category === 'School Supplies' && (
+    <>
+      <FontAwesomeIcon icon={faSchool} /> School Supplies
+    </>
+  )}
+  {category === 'Blood Donations' && (
+    <>
+      <FontAwesomeIcon icon={faTint} /> Blood Donations
+    </>
+  )}
               </button>
             ))}
         </div>
@@ -329,30 +377,55 @@ const HomeScreen = () => {
                 </select>
               </label>
             )}
-            {selectedCategory === 'Medical Supplies' && (
-              <label>
-                Type:
-                <select value={medicalSuppliesFilters.type} onChange={(e) => handleFilterChange('Medical Supplies', 'type', e.target.value)}>
-                  <option value="">Any</option>
-                  <option value="Medical Devices">Medical Devices</option>
-                  <option value="Medical Equipment">Medical Equipment</option>
-                  <option value="Medication">Medication</option>
-                </select>
-              </label>
-            )}
+           {selectedCategory === 'Medical Supplies' && (
+  <label>
+    Type:
+    <select value={medicalSuppliesFilters.type} onChange={(e) => handleFilterChange('Medical Supplies', 'type', e.target.value)}>
+      <option value="">Any</option>
+      <option value="Medical Devices">Medical Devices</option>
+      <option value="Medical Equipment">Medical Equipment</option>
+      <option value="Medication">Medication</option>
+    </select>
+  </label>
+)}
+{selectedCategory === 'Medical Supplies' && medicalSuppliesFilters.type === 'Medication' && (
+  <label>
+    Medication Use:
+    <select value={medicalSuppliesFilters.medicationUse} onChange={(e) => handleFilterChange('Medical Supplies', 'medicationUse', e.target.value)}>
+      <option value="">Any</option>
+      <option value="Pain Relief">Pain Relief</option>
+      <option value="Antibiotics">Antibiotics</option>
+      <option value="Anti-inflammatory">Anti-inflammatory</option>
+      {/* Add more options as needed */}
+    </select>
+  </label>
+)}
+
             {selectedCategory === 'Blood Donations' && (
               <>
                 <label>
                   Hospital:
-                  <input type="text" value={bloodFilters.hospital} onChange={(e) => handleFilterChange('Blood Donations', 'hospital', e.target.value)} />
+                  <select value={bloodFilters.hospital} onChange={(e) => handleFilterChange('Blood Donations', 'hospital', e.target.value)} >
+                    <option value="">Any</option>
+                    <option value="Hospital A">Hospital A</option>
+                    <option value="Hospital B">Hospital B</option>
+                    </select>
                 </label>
                 <label>
                   Governorate:
-                  <input type="text" value={bloodFilters.governorate} onChange={(e) => handleFilterChange('Blood Donations', 'governorate', e.target.value)} />
+                  <select value={bloodFilters.governorate} onChange={(e) => handleFilterChange('Blood Donations', 'governorate', e.target.value)} >
+                    <option value="">Any</option>
+                    <option value="Governorate X">Governorate X</option>
+                    <option value="Governorate Y">Governorate Y</option>
+                    </select>
                 </label>
                 <label>
                   Area:
-                  <input type="text" value={bloodFilters.area} onChange={(e) => handleFilterChange('Blood Donations', 'area', e.target.value)} />
+                  <select value={bloodFilters.Area} onChange={(e) => handleFilterChange('Blood Donations', 'area', e.target.value)} >
+                    <option value="">Any</option>
+                    <option value="Area Z">Area Z</option>
+                    <option value="Area Y">Area Y</option>
+                    </select>
                 </label>
               </>
             )}
@@ -401,6 +474,7 @@ const HomeScreen = () => {
             {selectedItem.hospital && <p><strong>Hospital:</strong> {selectedItem.hospital}</p>}
             {selectedItem.governorate && <p><strong>Governorate:</strong> {selectedItem.governorate}</p>}
             {selectedItem.area && <p><strong>Area:</strong> {selectedItem.area}</p>}
+            {selectedItem.toyCategory && <p><strong>Toy Category:</strong> {selectedItem.toyCategory}</p>}
             <p><strong>Description:</strong> {selectedItem.description}</p>
             <p><strong>Quantity Requested:</strong> {selectedItem.quantity}</p>
           </div>

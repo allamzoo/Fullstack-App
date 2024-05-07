@@ -1,15 +1,13 @@
-// ETANotification.js
-
 import React from 'react';
 import './ETANotification.css';
 
-const ETANotification = ({ eta, onClose }) => {
+const ETANotification = ({ eta, onClose, position }) => {
   return (
-    <div className="eta-notification">
+    <div className="eta-notification" style={{ '--position': position }}>
       <div className="eta-notification-content">
         <span className="close" onClick={onClose}>&times;</span> {/* Close button */}
         <h2>Driver ETA</h2>
-        <p>ETA: 12:00 pm{eta}</p>
+        <p>ETA:  EXAMPLE{eta}</p>
       </div>
     </div>
   );
