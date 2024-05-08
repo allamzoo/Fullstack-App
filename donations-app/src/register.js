@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.png'; // Import the logo image
-import './register.css'; // Import the CSS file for styles
+import './regisero.css'; // Import the CSS file for styles
 
 function DonorRegistration() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -52,7 +52,7 @@ function DonorRegistration() {
           Toggle theme
         </button>
       </div>
-      <div className="donor-registration">
+      <div className="Organization-Registration">
         <h2>Donor Registration</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -104,10 +104,12 @@ function DonorRegistration() {
               <option value="doctor">Doctor</option>
             </select>
           </div>
-          <div className="form-group">
-            <label htmlFor="document">Upload Document:</label>
-            <input type="file" id="document" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
-          </div>
+          {formData.role !== 'regular' && (
+            <div className="form-group">
+              <label htmlFor="document">Upload Document:</label>
+              <input type="file" id="document" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
+            </div>
+          )}
           <button type="submit">Register</button>
         </form>
       </div>

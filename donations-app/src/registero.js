@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.png'; // Import the logo image
-import './register.css'; // Import the CSS file for styles
+import './regisero.css'; // Import the CSS file for styles
 
 function OrganizationRegistration() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -52,12 +52,12 @@ function OrganizationRegistration() {
           Toggle theme
         </button>
       </div>
-      <div className="donor-registration">
+      <div className="Organization-Registration ">
         <h2>Organization Registration</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            <input type="text" id="name" name="name" value={formData.OrganizationName} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="lastName">Last Name:</label>
@@ -81,7 +81,7 @@ function OrganizationRegistration() {
           </div>
           <div className="form-group">
             <label htmlFor="name">Organization Name:</label>
-            <input type="text" id="name" name="name" value={formData.address} onChange={handleChange} required />
+            <input type="text" id="name" name="name" value={formData.OrganizationName} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="address">Address:</label>

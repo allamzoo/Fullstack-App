@@ -1,0 +1,112 @@
+/* WelcomePage.css */
+
+.welcome-page {
+    height: 100vh; /* Adjust as needed */
+  }
+.top-barr {
+    background-color: #fba2d7; /* Default background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  60px;
+    width: 94.5%;
+  
+  }
+  .dark-theme .top-barr{
+    background-color:#555;
+
+  }
+  
+  
+  .logo {
+    width: 600px; /* Adjust the width as needed */
+    height: 120px; /* Automatically adjust height to maintain aspect ratio */
+    display: block; /* Ensures proper spacing */
+    position: absolute; /* Position the logo relative to its containing element */
+    left: 100px; /* Align the logo to the left */
+}
+
+ 
+
+  
+  .welcome-content {
+    background-image: url('./background.jpg');
+    background-size: 100% 100%;
+    width:100%;
+    height: 100%;
+    background-position: center;
+    color: rgb(13, 14, 79);;
+    text-align: center;
+    padding: 100px 20px 20px; /* Adjust top padding to make space for the top bar */
+  }
+  
+
+  
+  .welcome-content h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.welcome-content p1 {
+    font-weight: bold;
+    position: absolute;
+    top: 70%; /* Adjusted to move the paragraphs down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    text-align: center; /* Center-align the paragraphs */
+    width: 70%; /* Adjusted to make the paragraphs wider */
+    max-width: 600px; /* Maximum width for better readability */
+    margin: 0 auto; /* Center the paragraphs horizontally */
+    line-height: 1.5; /* Improved readability with increased line height */
+    color: rgb(13, 14, 79); /* Adjusted the text color for better contrast */
+    opacity: 0.8; /* Adjusted the opacity for better readability */
+}
+
+.welcome-content p2 {
+    font-weight: bold;
+    position: absolute;
+    top: 80%; /* Adjusted to move the paragraphs down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    text-align: center; /* Center-align the paragraphs */
+    width: 70%; /* Adjusted to make the paragraphs wider */
+    max-width: 600px; /* Maximum width for better readability */
+    margin: 0 auto; /* Center the paragraphs horizontally */
+    line-height: 1.5; /* Improved readability with increased line height */
+    color: rgb(13, 14, 79); /* Adjusted the text color for better contrast */
+    opacity: 0.8; /* Adjusted the opacity for better readability */
+}
+
+.get-started-button {
+    position: absolute;
+    top: 95%; /* Adjusted to move the button below the paragraphs */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fba2d7;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  
+  .dark-theme .get-started-button {
+    background-color: #555; /* Change background color to black */
+  }
+  .dark-theme .theme-button {
+    background-color: #333; /* Change background color to black */
+  }
+
+  .dark-theme .welcome-content  h1{
+    color: rgb(13, 14, 79);
+
+  }

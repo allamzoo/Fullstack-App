@@ -1,0 +1,457 @@
+.button,
+.extra-button {
+  background-color: #FBA2D7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.button:hover,
+.extra-button:hover {
+  background-color: #D06EAB;
+}
+.extra-buttons {
+  position: absolute;
+  top: 100%; /* Position below the logo button */
+  right: 42px;
+  background-color: #FBA2D7;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icon styles */
+.extra-button svg {
+  margin-right: 10px;
+}
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white; /* Assuming this is intended for text color */
+}
+
+/* Light Theme */
+.light-theme {
+  background-color: white;
+  color: black; /* Text color for light theme */
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #333;
+  color: white; /* Text color for dark theme */
+}
+
+/* Apply theme class to the body element */
+body.dark-theme {
+  background-color: #333;
+  color: white; /* Text color for dark theme */
+}
+
+
+
+/* Logo styles */
+
+
+.logo-button {
+  background-image: url('./profile.jpg'); /* Set the background image */
+  background-size: contain; /* Ensure the image fits inside the button */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 75px;
+  right: 70px;
+  z-index: 999;
+  cursor: pointer;
+}
+.navigation-bar {
+  position: fixed;
+  top:150px ;
+  left: 0%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  padding: 10px; /* Add left padding for spacing */
+}
+/*.nav-button:first-child{
+  margin-left: 200px;
+}*/
+.nav-button {
+  background-color: #FBA2D7;
+  position: fixed;
+  left: 30%;
+  top: 36%;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px; /* Add right margin for spacing between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 290px;
+  height: 65px;
+}
+.nav-button1 {
+  background-color: #FBA2D7;
+  position: fixed;
+  right: 30%;
+  top: 36%;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px; /* Add right margin for spacing between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 290px;
+  height: 65px;
+}
+.nav-button2 {
+  background-color: #FBA2D7;
+  position: fixed;
+  left: 30%;
+  bottom: 33.33333%;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px; /* Add right margin for spacing between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 290px;
+  height: 65px;
+}
+.nav-button3 {
+  background-color: #FBA2D7;
+  position: fixed;
+  right: 30%;
+  bottom: 33.33333%;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px; /* Add right margin for spacing between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 290px;
+  height: 65px;
+}
+
+.nav-button:last-child {
+  margin-right: 0; /* Remove right margin for the last button */
+} 
+
+.nav-button:hover {
+  background-color: #D06EAB;
+}
+.nav-button1:hover {
+  background-color: #D06EAB;
+}
+.nav-button2:hover {
+  background-color: #D06EAB;
+}
+.nav-button3:hover {
+  background-color: #D06EAB;
+}
+.dark-theme .nav-scrollable-box{
+  background-color: #555;
+  position: fixed;
+  top: 250px;
+  left: 210px;
+  height: 400px; /* Maximum height of the scrollable box */
+  width: 1038px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  z-index: 999;
+}
+.nav-scrollable-box {
+  background-color: whitesmoke;
+  position: fixed;
+  top: 250px;
+  left: 210px;
+  height: 400px; /* Maximum height of the scrollable box */
+  width: 1038px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  z-index: 999;
+}
+.dark-theme .nav-scrollable-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 450px;
+  color: #FBA2D7;
+}
+
+.nav-scrollable-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 450px;
+  color: black;
+}
+
+.nav-scrollable-box ul li {
+  padding: 5px 0;
+}
+.nav-item-button {
+  background-color: #FBA2D7;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 50px;
+  width: 150px;
+  align-items: center;
+  margin-left: 0px;
+}
+.close-button{
+  background-color: #FBA2D7;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 35px;
+  width: 70px;
+  align-items: center;
+  
+}
+.nav-item-button:hover {
+  background-color: #D06EAB;
+}
+/* App.css */
+
+.scrollable-container {
+  max-height: 500px; /* Adjust as needed */
+}
+/* App.css */
+
+.location-icon {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 5px; /* Add margin to separate the icon from the text */
+}
+/* OrganizationDetails.css */
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.accept-button,
+.reject-button {
+  background-color: #fba2d7; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.accept-button{
+  margin-left: -50px;
+  margin-right: 40px;
+}
+.reject-button{
+  margin-right: 150px;
+  margin-left: 40px;
+
+}
+
+.accept-button:hover,
+.reject-button:hover {
+  background-color: #D06EAB; /* Example hover background color */
+}
+/* App.css */
+
+/* Add styles for filter and sort dropdowns */
+.dark-theme .filter-dropdown{
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  margin-top: 10px;
+}
+.filter-dropdown {
+  color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  margin-top: 10px;
+  width: 20px;
+}
+.dark-theme a {
+  color: #FBA2D7;
+}
+a{
+  color: black;
+}
+.filter-dropdown select {
+  background-color: white;
+  color: black; /* Set background color for the select element */
+  border-radius: 5px;
+  height: 25px;
+  width: fit-content;
+}
+.dark-theme .filter-dropdown select{
+    background-color: #333;
+    color: #FBA2D7; /* Set background color for the select element */
+    border-radius: 5px;
+    height: 25px;
+    width: fit-content;
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 0;
+  left: 150px; /* Adjust as needed */
+  margin: 10px;
+}
+.sort-dropdown select{
+  background-color: white;
+  color: black; /* Set background color for the select element */
+  border-radius: 5px;
+  height: 25px;
+  width: fit-content;
+}
+.dark-theme .sort-dropdown select{
+    background-color: #333;
+  color: #FBA2D7; /* Set background color for the select element */
+  border-radius: 5px;
+  height: 25px;
+  width: fit-content;
+}
+/* Add this CSS to your stylesheet */
+
+
+.radio-button {
+  position: fixed;
+  left: 20px;
+  margin-top: 10px; /* Adjust spacing between radio buttons */
+  margin-left: 0px;
+}
+
+.radio-button + label {
+  font-size: 13px; /* Adjust font size of the label next to the radio button */
+  margin-left: 20px; /* Adjust spacing between radio button and label */
+}
+.dark-theme .password-change-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #555;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  z-index: 1000;
+}
+.password-change-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  z-index: 1000;
+}
+.delete-button {
+  background-color: #fba2d7; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.delete-button :hover{
+  background-color: #d06eab;
+}
+.password-change-box input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.password-change-box button.cancel-button {
+  background-color: #fba2d7;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  position: fixed;
+  top: 5px;
+  right: 0px;
+}
+
+.password-change-box button.confirm-button {
+  background-color: #fba2d7;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 60px;
+  margin-top: 15px;
+}
+
+.password-change-box button {
+  margin-right: 10px;
+}
+
+.password-change-box button.cancel-button:hover {
+  background-color: #d06eab;
+}
+
+.password-change-box button.confirm-button:hover {
+  background-color: #d06eab;
+}

@@ -1,34 +1,42 @@
 /* Donor Registration Form Styles */
 
-.Organization-Registration {
+
+
+.Organization-Registration form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 115px;
+    border: 1px solid #000;
+    border-radius: 12px;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+
+    color: #fff; /* Text color */
+    background-color: #fff; /* Dark blue background color */
+
 }
+
 
 .Organization-Registration h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333; /* Default text color */
+    color: #f059b3; /* Default text color */
 }
+
 
 /* Donor Registration text color in dark theme */
 .dark-theme .Organization-Registration h2 {
     color: #fba2d7; /* Pink text color in dark theme */
 }
 
-.Organization-Registration form {
-    display: flex;
-    flex-direction: column;
-}
+
 
 .Organization-Registration label {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    color: #333; /* Default text color */
+    color: #fba2d7; /* Default text color */
 }
 
 /* Label text color in dark theme */
@@ -40,17 +48,21 @@
 .Organization-Registration input[type="email"],
 .Organization-Registration input[type="tel"],
 .Organization-Registration select,
+
 .Organization-Registration input[type="file"],
 .Organization-Registration input[type="password"] {
     flex: 1;
+    background-color:#fff;
     height: 40px;
+    width: 583px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid #000;
+    border-radius: 12px;
     font-size: 16px;
     margin-top: 5px;
     margin-bottom: 15px;
-    color: #333; /* Default text color */
+    color: #fba2d7; /* Default text color */
+
 }
 
 /* Text color in dark theme */
@@ -59,6 +71,7 @@
 .dark-theme .Organization-Registration input[type="tel"],
 .dark-theme .Organization-Registration select,
 .dark-theme .Organization-Registration input[type="file"],
+
 .dark-theme .Organization-Registration input[type="password"] {
     color: #fba2d7; /* Pink text color in dark theme */
 }
@@ -83,11 +96,17 @@
     background-color: #333;
     color: #fff;
 }
+.dark-theme .Organization-Registration form {
+    border-color: #555;
+    background-color: #333;
+    color: #fff;
+}
 
 .dark-theme .Organization-Registration input[type="text"],
 .dark-theme .Organization-Registration input[type="email"],
 .dark-theme .Organization-Registration input[type="tel"],
 .dark-theme .Organization-Registration select,
+
 .dark-theme .Organization-Registration input[type="file"],
 .dark-theme .Organization-Registration input[type="password"] {
     background-color: #555;
@@ -100,3 +119,13 @@
     border-color: #333;
     color: #fba2d7; /* Pink text color in dark theme */
 }
+.Organization-Registration label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #fba2d7; /* Default text color */
+    justify-content: center; /* Center label horizontally */
+}
+.dark-theme .top-bar {
+    background-color: #555; /* Change background color to black */
+  }
