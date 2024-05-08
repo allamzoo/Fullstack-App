@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import DonationPost from './view posts';
 import DonorDetailsBook from './view donor details';
 import DonorContactDetailsBook from './view donor contact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWandMagicSparkles, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import './DonationViewOptions.css';
-import logo from './WhatsApp Image 2024-04-28 at 12.14.31 AM.jpeg';
+import { faHome, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import './dashboard.css'; 
+import logo from './label.jpeg';
+import ThemeContext from './ThemeContext'; // Import ThemeContext
 
 const DonationViewOptions = () => {
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext); // Theme state
   const [currentView, setCurrentView] = useState(null);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prev) => !prev);
-  };
+  
 
   const resetView = () => {
     setCurrentView(null);
   };
+  
 
-  const themeClass = isDarkTheme ? 'dark-theme' : 'light-theme';
+  const themeClass = isDarkTheme ?  'dark-theme' : 'light-theme' ; 
 
   return (
     <div className={`main-container ${themeClass}`}>
@@ -40,23 +40,17 @@ const DonationViewOptions = () => {
     </div>
   );
 };
-
+const home = () => {
+        
+  window.location.href = '/';
+};
 const Header = ({ currentView, toggleTheme, resetView, isDarkTheme }) => {
   return (
-    <div className="top-bar">
-      <img src={logo} className="logo" alt="Organization Logo" style={{ width: '600px', height: '120px' }} />
-
+    <>
+      <div className="logo-bar" style={{ padding: '20px' }}>
+        <img src={logo} className="logo" alt="Organization Logo" style={{ width: '600px', height: '120px' }} />
+      </div>
       <div className="top-bar-buttons">
-        {currentView && (
-          <button className="return-button" onClick={resetView}>
-            <FontAwesomeIcon icon={faArrowLeft} /> Return to Options
-          </button>
-        )}
-
-        {/* Custom theme switch */}
-        <button className="home-button" onClick={resetView}>
-          <FontAwesomeIcon icon={faHome} /> Home
-        </button>
         <label className="theme-switch" htmlFor="theme-switch">
           <input
             type="checkbox"
@@ -67,16 +61,27 @@ const Header = ({ currentView, toggleTheme, resetView, isDarkTheme }) => {
           <span className="slider round"></span> {/* Custom slider for theme switch */}
         </label>
 
-        
+        {currentView && (
+          <button className="view-buttons" onClick={resetView}>
+            <FontAwesomeIcon icon={faArrowLeft} /> Return to Options
+          </button>
+        )}
+
+        <button className="home-button" onClick={home}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+          Home
+        </button>
       </div>
-    </div>
+    </>
   );
 };
 
 
+
+
 const ViewOptions = ({ setCurrentView }) => {
   return (
-    <div className="view-buttons">
+    <div className="button-pair-container">
       <button onClick={() => setCurrentView('DonationPost')}>
         View Fulfilled Donations
       </button>

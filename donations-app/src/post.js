@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './post.css'; // Import CSS styles
+import React, { useState, useEffect , useContext} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'; // Import icons
-
-import logo from './WhatsApp Image 2024-04-28 at 12.14.31 AM.jpeg'; // Logo path
+import { faHome } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import './dashboard.css'; 
+import ThemeContext from './ThemeContext'; // Import ThemeContext
+import logo from './label.jpeg';
 
 
 
 function DonationPostt() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false); // Theme state
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext); // Theme state
   const [category, setCategory] = useState('');
   const [itemDescription, setItemDescription] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prev) => !prev); // Toggle the theme
-  };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,11 +38,11 @@ function DonationPostt() {
   const themeClass = isDarkTheme ? 'dark-theme' : 'light-theme';
 
   return (
-    <div className={`donation-post ${themeClass}`}>
+    <div className={`donation1-post ${themeClass}`}>
       {/* Top bar with logo and buttons */}
-      <div className="top-bar">
+      <div className="logo-bar" style={{ padding: '20px' }}>
         <img src={logo} className="logo" alt="Logo" style={{ width: '600px', height: '120px' }} /> 
-
+        </div>
         <div className="top-bar-buttons">
         <button onClick={() => window.location.href = '/'} className="home-button">
             <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
@@ -59,7 +58,7 @@ function DonationPostt() {
             <div className="slider round"></div> {/* Custom slider for theme switch */}
           </label>
           
-        </div>
+        
       </div>
 
       {/* Form for creating a donation post */}

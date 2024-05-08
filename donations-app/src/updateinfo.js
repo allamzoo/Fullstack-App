@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
 import logo from './label.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
-import './dashboard.css'; // Import the CSS file for styling
-import './updateinfo.css'; // Import the CSS file for styling
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import './dashboard.css'; 
 import ThemeContext from './ThemeContext'; // Import ThemeContext
 
 function AccountSettings() {
@@ -49,7 +48,7 @@ function AccountSettings() {
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar" style={{ padding: '10px' }}>
+            <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
             </div>
             <div style={{ padding: '20px', position: 'relative' }}>

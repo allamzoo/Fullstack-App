@@ -33,7 +33,7 @@ function Dashboard() {
         <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
       </div>
       <header className="App-header">
-        <p style={{ fontSize: '3rem', color: '#fba2d7' }}>
+        <p style={{ fontSize: '3rem', color: '#fba2d7', textAlign: 'center' }}>
           Welcome to Dashboard!
         </p>
         <div className="button-container">
@@ -54,8 +54,8 @@ function Dashboard() {
           </button>
           
           {showNotifications && (
-            <div className="popup">
-              <div className="popup-content">
+            <div className="popup1">
+              <div className="popup1-content">
                 <span className="close" onClick={hideNotifications}>&times;</span>
                 <h2>Notifications</h2>
                 {notifications.map(notification => (
@@ -83,16 +83,16 @@ function Dashboard() {
           <Link to="/notifications" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Deleting fulfilled posts</button>
           </Link>
-          <Link to="/details" style={{ textDecoration: 'none', marginRight: '10px' }}>
+          <Link to="/post" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Create Donation Post</button>
           </Link>
-          <Link to="/notifications" style={{ textDecoration: 'none', marginRight: '10px' }}>
+          <Link to="/details" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Enter Donation delatils</button>
           </Link>
-          <Link to="/notifications" style={{ textDecoration: 'none', marginRight: '10px' }}>
+          <Link to="/schedule" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Schedule selection</button>
           </Link>
-          <Link to="/details" style={{ textDecoration: 'none', marginRight: '10px' }}>
+          <Link to="/DonationViewOptions" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Views Options</button>
           </Link>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import logo from './label.jpeg';
 import mapImage from './map.png'; // Import the map image
 import './dashboard.css'
@@ -28,7 +28,7 @@ function LocationMappingScreen() {
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar" style={{ padding: '10px' }}>
+            <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
             </div>
             <div className="center-content" style={{ position: 'relative', padding: '10px', marginTop: '90px' }}>

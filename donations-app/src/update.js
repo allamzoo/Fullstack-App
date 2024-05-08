@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faWandMagicSparkles, faTrash , faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faHome,  faTrash , faEdit } from '@fortawesome/free-solid-svg-icons';
 import logo from './label.jpeg';
 import './dashboard.css';
 import ThemeContext from './ThemeContext'; // Import ThemeContext
@@ -48,7 +48,7 @@ function OrganizationDonationPosts() {
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar">
+            <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
             </div>
             <div className="button-container">    

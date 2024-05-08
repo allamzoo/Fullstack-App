@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import './schedule.css'; // Import CSS for styling
+import React, { useContext} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons'; // Home icon
-import logo from './WhatsApp Image 2024-04-28 at 12.14.31 AM.jpeg'; // Logo image
+import { faHome } from '@fortawesome/free-solid-svg-icons'; 
+import logo from './label.jpeg';
+import ThemeContext from './ThemeContext';
+import './dashboard.css'; // Import CSS for styling
 
 function ScheduleDropoff() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false); // Theme state
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext); // Theme state
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prev) => !prev); // Toggle theme state
-  };
+ 
 
   const handleHomeClick = () => {
     window.location.href = '/'; // Redirect to home
@@ -18,26 +17,22 @@ function ScheduleDropoff() {
   const handleSubmit = () => {
     alert('Schedule Submitted!'); // Alert on form submission
   };
+ 
 
   const themeClass = isDarkTheme ? 'dark-theme' : 'light-theme'; // Determine theme class
 
   return (
-    <div className={`schedule-dropoff ${themeClass}`}>
-      {/* Top Bar */}
-      <div className="top-bar">
-        <img src={logo} className="logo" alt="Organization Logo" style={{ width: '600px', height: '120px' }} />
-
-        {/* Button Container */}
+    <div className={`donation1-post ${themeClass}`}>
+      {/* Top bar with logo and buttons */}
+      <div className="logo-bar" style={{ padding: '20px' }}>
+        <img src={logo} className="logo" alt="Logo" style={{ width: '600px', height: '120px' }} /> 
+        </div>
         <div className="top-bar-buttons">
-          {/* Theme Switch Button */}
-          {/* Home Button */}
-          <button
-            className="home-button"
-            onClick={handleHomeClick}
-          >
-            <FontAwesomeIcon icon={faHome} /> Home
+        <button onClick={() => window.location.href = '/'} className="home-button">
+            <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+            Home
           </button>
-          <label className="theme-switch" htmlFor="theme-switch">
+        <label className="theme-switch" htmlFor="theme-switch">
             <input
               type="checkbox"
               id="theme-switch"
@@ -46,13 +41,12 @@ function ScheduleDropoff() {
             />
             <div className="slider round"></div> {/* Custom slider for theme switch */}
           </label>
-
           
-        </div>
+        
       </div>
 
       {/* Form Wrapper */}
-      <div className="form-wrapper">
+      <div className="form-wrapper1">
         <h2>Schedule Donation Drop-off</h2>
 
         {/* Input Group - Date */}

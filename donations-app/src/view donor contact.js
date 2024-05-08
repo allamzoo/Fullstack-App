@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import './view donor contact';
-
 function DonorContactDetailsBook({ contactDetails, theme }) {
   const [currentPage, setCurrentPage] = useState(0);
 

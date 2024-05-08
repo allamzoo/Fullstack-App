@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpload, faHome, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons'; // Import the necessary icons
+import { faUpload, faHome} from '@fortawesome/free-solid-svg-icons'; // Import the necessary icons
 import logo from './label.jpeg';
 import './dashboard.css';
 import ThemeContext from './ThemeContext'; // Import ThemeContext
@@ -39,7 +39,7 @@ function Tabbakh() {
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar" style={{ padding: '10px 20px' }}>
+            <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
             </div>
             <div style={{ padding: '20px', backgroundColor: isDarkTheme ? '#000' : '#fff', color: isDarkTheme ? '#fff' : '#333' }}>

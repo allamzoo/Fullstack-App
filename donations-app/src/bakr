@@ -1,0 +1,783 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #000; /* Default color for text */
+    padding: 20px;
+    top:200px;
+  }
+  
+  .dark-theme .home-container {
+    background-color: #333; /* Dark background color */
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+  
+  .requested-items {
+    list-style: none; /* Remove default bullet points */
+  }
+  
+  .requested-items li {
+    position: relative; /* Ensure relative positioning for absolute positioning of the dot */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .requested-items li .fulfill-button {
+    background-color: #fba2d7; /* Pink background color for the button */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .requested-items li .fulfill-button:hover {
+    background-color: #ff78a9; /* Lighter pink background color on hover */
+  }
+  
+  .requested-items li .fulfilled-sign {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #00cc00; /* Green color for the fulfilled sign */
+    font-size: 20px;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 100; /* Set a higher z-index value */
+  }
+  .dark-theme .popup{
+    background-color: #555;
+  }
+  
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+ 
+  .close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-popup:hover,
+  .close-popup:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .logo {
+    width: 600px; /* Adjust the width as needed */
+    height: 120px; /* Automatically adjust height to maintain aspect ratio */
+    display: block; /* Ensures proper spacing */
+    position: absolute; /* Position the logo relative to its containing element */
+    left: 100px; /* Align the logo to the left */
+  }
+ 
+ 
+  
+  .dark-theme .top-bar {
+    background-color: #555; /* Change background color to black */
+  }
+  
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 1450px;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #000;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  
+  
+ 
+  
+  .dark-theme .categories h2,
+  .dark-theme .requested-items h2 {
+    color: #fba2d7; /* Pink color for headings in dark mode */
+  }
+  
+  .category-buttons button {
+    background-color: #fba2d7;
+    color: #fff;
+    padding: 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-buttons button.selected {
+    background-color: #790a5f; /* Darker pink background color for selected button */
+  }
+  
+  .requested-items li {
+    position: relative; /* Position relative to contain the emoji */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .requested-items li .popup-trigger {
+    position: absolute;
+    top: 5px; /* Adjust the top position as needed */
+    right: 5px; /* Adjust the right position as needed */
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .requested-items li .popup-trigger:hover {
+    color: #fba2d7; /* Change color on hover */
+  }
+  
+  .requested-items li select {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    width: 100px;
+  }
+  .dark-theme .requested-items li select {
+    background-color: #555;
+    color: #fba2d7;
+  }
+  .filters h2 {
+    color: #000;
+    margin-bottom: 10px; /* Add margin bottom to create space between the label and filter */
+  }
+  
+  .filters h1 {
+    color: #000;
+    margin-bottom: 10px; /* Add margin bottom to create space between the label and filter */
+  }
+  
+
+  
+  
+  .dark-theme .requested-items li {
+    border-color: #555; /* Border color in dark mode */
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+  
+ /* HomeScreen.css */
+
+/* HomeScreen.css */
+
+/* HomeScreen.css */
+
+.filters {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column width as needed */
+    grid-gap: 10px; /* Adjust the gap between columns as needed */
+    
+  }
+  
+  .filter-option {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dark-theme .filter-option {
+    color: #fba2d7;
+  }
+  
+  .dark-theme .filter-options  {
+   background-color: #333;
+   color: #fba2d7;
+
+  }
+  .dark-theme .filter-options select {
+    background-color: #555;
+    color: #fba2d7;
+ 
+   }
+  
+  .filter-options label {
+    font-size: 16px;
+  }
+  
+  .filter-options  {
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    width: 50%; /* Ensure the select takes full width */
+  }
+  
+  
+  .dark-theme .filters h2 {
+    color: #fba2d7;
+  }
+  
+  .dark-theme .filter-option select {
+    background-color: #555;
+    color: #fba2d7;
+  }
+  
+  /* Modal */
+  .modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content h2 {
+    color: #000;
+  }
+  
+  .modal-content p {
+    margin: 10px 0;
+  }
+  
+  .modal-content strong {
+    font-weight: bold;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  /* Popup for fulfillment celebration */
+  .fulfilled-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  .celebration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b; /* Yellow color */
+    border-radius: 50%;
+    margin: 5px;
+    position: relative;
+    animation: confetti 1s ease infinite alternate;
+  }
+  
+  @keyframes confetti {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+  
+  /* Style the text in the fulfilled popup */
+  .fulfilled-popup p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Dark theme for the fulfilled popup */
+  .dark-theme .fulfilled-popup {
+    background-color: #333; /* Dark background color */
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+  /* CSS for the right sign */
+/* Style for the right sign */
+.right-sign {
+    margin-left: 5px; /* Adjust the spacing as needed */
+    color: #00cc00; /* Green color for the right sign */
+    font-size: 20px;
+  }
+  .organization-item {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative; /* Ensure relative positioning for absolute positioning of the eye emoji */
+  }
+  
+  .organization-item:hover {
+    background-color: #ebc6d4; /* Light pink background color on hover */
+  }
+  
+  .organization-item .popup-trigger {
+    position: absolute;
+    top: 5px; /* Adjust the top position as needed */
+    right: 5px; /* Adjust the right position as needed */
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  
+  /* Dark theme for organization item */
+  .dark-theme .organization-list {
+    border-color: #555; /* Border color in dark mode */
+    color: #fba2d7; /* Text color in dark mode */
+  }
+  
+  /* Dark theme for eye emoji */
+  .organization-item:hover {
+    background-color: #ebc6d4; /* Light pink background color on hover */
+  }
+  
+  /* Dark theme */
+  .dark-theme .organization-item:hover {
+    background-color: #555; /* Darker background color on hover in dark mode */
+  }
+  .dark-theme .organization-item{
+    background-color:#333;
+  }
+  
+  
+  /* Dark theme text color for register organization list */
+  .dark-theme .organization-list h2 {
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+  
+  /* Dark theme text color for filter options */
+  .dark-theme .filters h3 {
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+
+  /* HomeScreen.css */
+
+/* Search bar */
+/* HomeScreen.css */
+
+/* Search bar */
+/* HomeScreen.css */
+
+/* Search bar */
+/* HomeScreen.css */
+
+/* Search bar */
+.confirm-button {
+    background-color: #fba2d7; /* Pink background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    top: 10px; /* Adjust margin as needed */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    right: 10px;
+
+  }
+
+.confirm-button, .eta-button {
+    padding: 10px 20px;
+    background-color: #fba2d7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .confirm-button:hover, .eta-button:hover {
+    background-color: #790a5f;
+  }
+  .custom-button {
+    background-color: #fba2d7; /* Pink background color */
+    color: #fff; /* White text color */
+    padding: 15px; /* Adjust padding as needed */
+    margin: 5px; /* Adjust margin as needed */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .custom-button:hover {
+    background-color: #790a5f; /* Darker pink background color on hover */
+  }
+  .categories h2,
+.requested-items h2 {
+    color: #000;
+    
+}
+
+.dark-theme .categories h2,
+.dark-theme .requested-items h2 {
+    color: #fba2d7; /* Pink color for headings in dark mode */
+}
+
+.category-buttons button {
+  background-color: #fba2d7;
+  color: #fff;
+  padding: 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius to make the buttons cylindrical */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-buttons button.selected {
+  background-color: #790a5f; /* Darker pink background color for selected button */
+}
+.eta-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ccc; /* Default background color */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 100; /* Set a higher z-index value */
+  }
+  .dark-theme .eta-notification {
+    /* Dark mode styles */
+    background-color: #555; /* Dark background color */
+    border-color: #555; /* Border color in dark mode */
+    color: #fba2d7; 
+  }
+  
+  .eta-notification-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #fba2d7; /* Change color on hover */
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  
+  .custom-dropdown {
+    position: relative;
+    width: 100%;
+  }
+  
+  .custom-dropdown select {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Remove default arrow icon */
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .custom-dropdown select:focus {
+    outline: none; /* Remove outline on focus */
+    border-color: #fba2d7; /* Change border color on focus */
+  }
+  
+  .custom-dropdown::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333; /* Arrow color */
+  }
+  .driver-arrived-popup {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Dark background color */
+    color: #fba2d7; /* Pink color for text in dark mode */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Set a higher z-index value */
+  }
+  
+  .driver-arrived-popup p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .driver-arrived-popup .close-button {
+    background-color: #fba2d7; /* Pink background color */
+    color: #fff; /* White text color */
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  
+  .driver-arrived-popup .close-button:hover {
+    background-color: #790a5f; /* Darker pink background color on hover */
+  }
+  
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    z-index: 100; /* Set a higher z-index value */
+  }
+  .dark-theme .popup{
+    background-color: #555;
+  }
+  
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000; /* Default color for text */
+  }
+  
+  .dark-theme .header {
+    color: #fba2d7; /* Pink color for text in dark mode */
+  }
+  
+  .hospital-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .hospital {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .hospital img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .hospital-info {
+    padding: 20px;
+  }
+  
+  .hospital-info h2 {
+    margin-top: 0;
+  }
+  
+  .hospital-info p {
+    margin-bottom: 0;
+  }
+  .teaching-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+  
+.input-container {
+    margin-bottom: 20px;
+}
+  
+.input-field {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333; /* Default color for input text */
+    background-color: #fff; /* Default background color for input */
+}
+
+.dark-theme .input-field {
+    background-color: #555; /* Background color for input in dark mode */
+}
+  
+/* Placeholder text color */
+.input-field::placeholder {
+    color: #333; /* Default color for placeholder text */
+}
+
+.dark-theme .input-field::placeholder {
+    color: #fba2d7; /* Pink color for placeholder text in dark mode */
+}
+  
+.submit-button {
+    background-color: #fba2d7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+  
+.light-mode-header {
+    color: #000; /* Black color for the header in light mode */
+}
+  
+.dark-mode-header {
+    color: #fba2d7; /* Pink color for the header in dark mode */
+}
+  
+.dark-theme {
+    background-color: #333; /* Dark background color */
+}
+ .clinic-location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+ .dark-theme .clinic-location-container h2,
+  .dark-theme .input-container h3 {
+    color: #fba2d7; /* Pink color for the heading */
+  }
