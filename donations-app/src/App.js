@@ -16,7 +16,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* Add your main application content here */}
-        <HomeScreen /> {/* Render the ClinicLocation component */}
+        <HomeScreenDR
+         /> {/* Render the ClinicLocation component */}
       </header>
     </div>
   );

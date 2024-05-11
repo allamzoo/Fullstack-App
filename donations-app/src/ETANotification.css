@@ -1,49 +1,45 @@
 /* ETANotification.css */
 
 .eta-notification {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ccc;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
-    z-index: 100; /* Set a higher z-index value */
-  }
-  
-  .eta-notification-content {
-    text-align: center;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #fba2d7; /* Change color on hover */
-  }
-  
-  h2 {
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin: 10px 0;
-  }.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #fba2d7; /* Change color on hover */
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ccc; /* Default background color */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  z-index: 100; /* Set a higher z-index value */
+}
+.dark-theme .eta-notification {
+  /* Dark mode styles */
+  background-color: #555; /* Dark background color */
+  border-color: #555; /* Border color in dark mode */
+  color: #fba2d7; 
+}
+
+.eta-notification-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fba2d7; /* Change color on hover */
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 10px 0;
+}

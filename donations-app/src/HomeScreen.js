@@ -475,6 +475,7 @@ const HomeScreen = () => {
             {selectedItem.governorate && <p><strong>Governorate:</strong> {selectedItem.governorate}</p>}
             {selectedItem.area && <p><strong>Area:</strong> {selectedItem.area}</p>}
             {selectedItem.toyCategory && <p><strong>Toy Category:</strong> {selectedItem.toyCategory}</p>}
+            {selectedItem.medicationUse && <p><strong>Medication Use:</strong> {selectedItem.medicationUse}</p>}
             <p><strong>Description:</strong> {selectedItem.description}</p>
             <p><strong>Quantity Requested:</strong> {selectedItem.quantity}</p>
           </div>
