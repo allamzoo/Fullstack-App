@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const DriverArrivalNotification = ({ onClose }) => {
+const DriverArrivalNotificationn = ({ onClose }) => {
   return (
     <div className="popup">
       <div className="popup-content">
@@ -14,4 +14,4 @@ const DriverArrivalNotification = ({ onClose }) => {
   );
 };
 
-export default DriverArrivalNotification;
+export default DriverArrivalNotificationn;

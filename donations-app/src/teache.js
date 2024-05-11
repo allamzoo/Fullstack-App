@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 import logo from './logo.png'; // Import your logo image
 import './HomeScreen.css'; // Import the CSS file for styles
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
+const HomeButton = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  return (
+    <button onClick={handleHomeClick}>Home</button>
+  );
+};
 function TeachingPostsPage() {
   // Sample teaching posts data
   const [teachingPosts, setTeachingPosts] = useState([
@@ -43,8 +56,12 @@ function TeachingPostsPage() {
   });
 
   // State for dark theme
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+ 
   // Function to handle viewing details of a teaching post
   const handleViewDetails = (post) => {
     setSelectedPost(post);
@@ -99,24 +116,35 @@ function TeachingPostsPage() {
   };
 
   return (
-    <div className={`home-container ${darkTheme ? 'dark-theme' : ''}`}>
-      <div className="top-bar">
-        <img src={logo} alt="Logo" className="logo" />
-        <div className="theme-switch">
-          <label className="switch">
-            <input type="checkbox" checked={darkTheme} onChange={() => setDarkTheme(!darkTheme)} />
-            <span className="slider round"></span>
-          </label>
-          <div class="dropdown">
-  <button class="dropbtn"> &#9776;</button>
-  <div class="dropdown-content">
-    <button>Sign Out</button>
-    <button>Update/Delete Account</button>
-    <button>Home</button>
-  </div>
+    <div className={isDarkTheme ? 'home-container dark-theme' : 'home-container'}>
+    <div className="top-bar">
+      <img src={logo} alt="Logo" className="logo" />
+      <label className="theme-switch" htmlFor="theme-switch">
+        <input
+          type="checkbox"
+          id="theme-switch"
+          checked={isDarkTheme}
+          onChange={toggleTheme}
+        />
+        <div className="slider round"></div>
+      </label>
+      <div class="dropdown">
+<button class="dropbtn"> &#9776;</button>
+<div class="dropdown-content">
+<Link to="/hs" style={{ textDecoration: 'none' }}>
+
+<HomeButton />
+</Link>
+
+<Link to="/l" style={{ textDecoration: 'none' }}>
+  <button>Sign Out</button>
+  </Link>
+  <button>Update/Delete Account</button>
+
 </div>
-        </div>
-      </div>
+</div>
+      
+    </div>
     
       {/* Filter options */}
       <div className="filters">
@@ -174,7 +202,7 @@ function TeachingPostsPage() {
               <p>Governorate: {post.governorate}</p>
               <p>Number of Students: {post.numberOfStudents}</p>
               {/* Change the emoji to an eye for selection */}
-              <span className={`popup-trigger ${darkTheme ? 'black-emoji' : ''}`} role="img" aria-label="Select Post" onClick={() => handleViewDetails(post)}>👁️</span>
+              <span className={`popup-trigger ${isDarkTheme ? 'black-emoji' : ''}`} role="img" aria-label="Select Post" onClick={() => handleViewDetails(post)}>👁️</span>
               <button className="fulfill-button" onClick={() => handleFulfillCase(post)}>
                 {post.fulfilled ? 'Unfulfill this case' : 'Fulfill this case'} 
               </button>

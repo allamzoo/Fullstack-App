@@ -3,38 +3,56 @@ import HospitalAMap from './HospitalAMap.jpg';
 import HospitalBMap from './HospitalBMap.jpg';
 import logo from './logo.png';
 import './HomeScreen.css';
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
+const HomeButton = () => {
+  const navigate = useNavigate();
 
-const HospitalLocationsPage = () => {
+  const handleHomeClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  return (
+    <button onClick={handleHomeClick}>Home</button>
+  );
+};const HospitalLocationsPage = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
   };
-
+ 
   return (
     <div className={isDarkTheme ? 'home-container dark-theme' : 'home-container'}>
-      <div className="top-bar">
-        <img className="logo" src={logo} alt="Logo" />
-        <div className="theme-switch">
-          <input
-            type="checkbox"
-            id="switch"
-            checked={isDarkTheme}
-            onChange={toggleTheme}
-          />
-          <label htmlFor="switch" className="slider round"></label>
-          <div class="dropdown">
-  <button class="dropbtn"> &#9776;</button>
-  <div class="dropdown-content">
-    <button>Sign Out</button>
-    <button>Update/Delete Account</button>
-    <buttons>Home</buttons>
-  </div>
+    <div className="top-bar">
+      <img src={logo} alt="Logo" className="logo" />
+      <label className="theme-switch" htmlFor="theme-switch">
+        <input
+          type="checkbox"
+          id="theme-switch"
+          checked={isDarkTheme}
+          onChange={toggleTheme}
+        />
+        <div className="slider round"></div>
+      </label>
+      <div class="dropdown">
+<button class="dropbtn"> &#9776;</button>
+<div class="dropdown-content">
+<Link to="/hs" style={{ textDecoration: 'none' }}>
+
+<HomeButton />
+</Link>
+
+<Link to="/l" style={{ textDecoration: 'none' }}>
+  <button>Sign Out</button>
+  </Link>
+  <button>Update/Delete Account</button>
+
 </div>
-        </div>
-        
-      </div>
+</div>
+      
+    </div>
       <div className="content">
         <div className="header">
           <h1>Welcome to Hospital Locations</h1>

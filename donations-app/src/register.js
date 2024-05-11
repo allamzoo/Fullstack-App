@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.png'; // Import the logo image
 import './regisero.css'; // Import the CSS file for styles
+import { Link } from 'react-router-dom';
 
 function DonorRegistration() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -48,9 +49,15 @@ function DonorRegistration() {
     <div className={isDarkTheme ? 'app dark-theme' : 'app'}>
       <div className="top-bar">
         <img src={logo} alt="Logo" className="logo" />
-        <button className={isDarkTheme ? 'theme-button dark' : 'theme-button'} onClick={toggleTheme}>
-          Toggle theme
-        </button>
+        <label className="theme-switch" htmlFor="theme-switch">
+        <input
+          type="checkbox"
+          id="theme-switch"
+          checked={isDarkTheme}
+          onChange={toggleTheme}
+        />
+        <div className="slider round"></div>
+      </label>
       </div>
       <div className="Organization-Registration">
         <h2>Donor Registration</h2>
@@ -110,7 +117,10 @@ function DonorRegistration() {
               <input type="file" id="document" accept=".pdf,.doc,.docx" onChange={handleFileChange} />
             </div>
           )}
+           <Link to="/l" >
+
           <button type="submit">Register</button>
+        </Link>
         </form>
       </div>
     </div>

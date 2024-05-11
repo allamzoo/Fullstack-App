@@ -7,18 +7,26 @@ import { Link } from 'react-router-dom';
 
 function WelcomePage() {
   const [darkTheme, setDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
 
   return (
-<div className={` ${darkTheme ? 'welcome-page dark-theme' : 'welcome-page'}`}>
+<div className={isDarkTheme ? 'welcome-page dark-theme' : 'welcome-page'}>
       <div className="top-barr">
         <img src={logo} alt="Logo" className="logo" />
-        <div className="theme-switch">
-          <label className="switch">
-            <input type="checkbox" checked={darkTheme} onChange={() => setDarkTheme(!darkTheme)} />
-            <span className="slider round"></span>
-          </label>
-        </div>
+        <label className="theme-switch" htmlFor="theme-switch" >
+          <input
+            type="checkbox"
+            id="theme-switch"
+            checked={isDarkTheme}
+            onChange={toggleTheme}
+         
+          />
+          <div className="slider round" ></div>
+        </label>
       </div>
       <div className="welcome-content" style={{ backgroundImage: `url(${backgroundImg})` }}>
         <div className="overlay"></div>

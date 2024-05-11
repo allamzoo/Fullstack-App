@@ -222,7 +222,16 @@ const HomeScreent = () => {
           />
           <div className="slider round"></div>
         </label>
-        
+        <div class="dropdown">
+  <button class="dropbtn"> &#9776;</button>
+  <div class="dropdown-content">
+  <Link to="/l" style={{ textDecoration: 'none', marginRight: '10px' }}>
+
+    <button>Sign Out</button>
+    </Link>
+    <button>Update/Delete Account</button>
+  </div>
+</div>
         
       </div>
         <div className="search-bar" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

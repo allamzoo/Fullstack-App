@@ -1,9 +1,27 @@
 import React, { useState } from 'react';
 import logo from './logo.png'; // Import your logo image
 import './HomeScreen.css'; // Import the CSS file for styles
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function MedicalCasesPage() {
   // Sample medical cases data
+  const HomeButton = () => {
+    const navigate = useNavigate();
+  
+    const handleHomeClick = () => {
+      navigate(-1); // Go back to the previous page
+    };
+  
+    return (
+      <button onClick={handleHomeClick}>Home</button>
+    );
+  };
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
   const [medicalCases, setMedicalCases] = useState([
     {
       id: 1,
@@ -111,84 +129,78 @@ function MedicalCasesPage() {
   };
 
   return (
-    <div className={`home-container ${darkTheme ? 'dark-theme' : ''}`}>
-      <div className="top-bar">
-        <img src={logo} alt="Logo" className="logo" />
-        <div className="theme-switch">
-          <label className="switch">
-            <input type="checkbox" checked={darkTheme} onChange={() => setDarkTheme(!darkTheme)} />
-            <span className="slider round"></span>
-          </label>
-          <div class="dropdown">
-  <button class="dropbtn"> &#9776;</button>
-  <div class="dropdown-content">
-    <button>Sign Out</button>
-    <button>Update/Delete Account</button>
-    <button>Home</button>
-  </div>
+    <div className={isDarkTheme ? 'home-container dark-theme' : 'home-container'}>
+    <div className="top-bar">
+      <img src={logo} alt="Logo" className="logo" />
+      <label className="theme-switch" htmlFor="theme-switch">
+        <input
+          type="checkbox"
+          id="theme-switch"
+          checked={isDarkTheme}
+          onChange={toggleTheme}
+        />
+        <div className="slider round"></div>
+      </label>
+      <div class="dropdown">
+<button class="dropbtn"> &#9776;</button>
+<div class="dropdown-content">
+<Link to="/hs" style={{ textDecoration: 'none' }}>
+
+<HomeButton />
+</Link>
+
+<Link to="/l" style={{ textDecoration: 'none' }}>
+  <button>Sign Out</button>
+  </Link>
+  <button>Update/Delete Account</button>
+
 </div>
-        </div>
-      </div>
+</div>
+      
+    </div>
       {/* Filter options */}
       <div className="filters">
-      <h1>View Medical Cases</h1>
+  <h3>Filter Options</h3>
+  <div className="filter-options">
+    <div className="filter-option">
+      <label htmlFor="specialty">Specialty:</label>
+      <select id="specialty" name="specialty" value={filterOptions.specialty} onChange={handleFilterChange}>
+        <option value="">All</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        {/* Add more options as needed */}
+      </select>
+    </div>
+    <div className="filter-option">
+      <label htmlFor="organization">Organization Name:</label>
+      <select id="organization" name="organization" value={filterOptions.organization} onChange={handleFilterChange}>
+        <option value="">All</option>
+        <option value="EL Nozha Hospital">EL Nozha Hospital</option>
+        <option value="EL Nas">EL Nas</option>
+        {/* Add more options as needed */}
+      </select>
+    </div>
+    <div className="filter-option">
+      <label htmlFor="area">Area:</label>
+      <select id="area" name="area" value={filterOptions.area} onChange={handleFilterChange}>
+        <option value="">All</option>
+        <option value="Heliopolis">Heliopolis</option>
+        <option value="Haram">Haram</option>
+        {/* Add more options as needed */}
+      </select>
+    </div>
+    <div className="filter-option">
+      <label htmlFor="governorate">Governorate:</label>
+      <select id="governorate" name="governorate" value={filterOptions.governorate} onChange={handleFilterChange}>
+        <option value="">All</option>
+        <option value="Cairo">Cairo</option>
+        <option value="Giza">Giza</option>
+        {/* Add more options as needed */}
+      </select>
+    </div>
+  </div>
+</div>
 
-        <h2>Filter Options</h2>
-        <div className="filter-option">
-          <div className="filter-option">
-            <div>
-              <label htmlFor="specialty">Specialty:</label>
-            </div>
-            <div>
-              <select id="specialty" name="specialty" value={filterOptions.specialty} onChange={handleFilterChange}>
-                <option value="">All</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Orthopedics">Orthopedics</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-          </div>
-          <div className="filter-option">
-            <div>
-              <label htmlFor="organization">Organization Name:</label>
-            </div>
-            <div>
-              <select id="organization" name="organization" value={filterOptions.organization} onChange={handleFilterChange}>
-                <option value="">All</option>
-                <option value="EL Nozha Hospital">EL Nozha Hospital</option>
-                <option value="EL Nas">EL Nas</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-          </div>
-          <div className="filter-option">
-            <div>
-              <label htmlFor="area">Area:</label>
-            </div>
-            <div>
-              <select id="area" name="area" value={filterOptions.area} onChange={handleFilterChange}>
-                <option value="">All</option>
-                <option value="Heliopolis">Heliopolis</option>
-                <option value="Haram">Haram</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-          </div>
-          <div className="filter-option">
-            <div>
-              <label htmlFor="governorate">Governorate:</label>
-            </div>
-            <div>
-              <select id="governorate" name="governorate" value={filterOptions.governorate} onChange={handleFilterChange}>
-                <option value="">All</option>
-                <option value="Cairo">Cairo</option>
-                <option value="Giza">Giza</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* Display medical cases */}
       <div className="medical-cases">
         {medicalCases.filter(applyFilters).map((medicalCase) => (

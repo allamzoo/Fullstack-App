@@ -12,15 +12,44 @@ function Login() {
     const navigate = useNavigate(); // Access the navigate function for redirection
 
     const handleLogin = () => {
-        // Check if username and password are both "admin"
-        if (username === 'admin' && password === 'admin') {
-            // Redirect to admin page
-            navigate('/admin');
-        } else {
-            // Handle invalid credentials
-            alert('Invalid username or password');
+        // Check username and password combinations for different roles
+        switch (username) {
+            case 'admin':
+                if (password === 'admin') {
+                    // Redirect to admin page
+                    navigate('/admin');
+                    return;
+                }
+                break;
+            case 'regulardonor':
+                if (password === 'regulardonor') {
+                    // Redirect to hs page
+                    navigate('/hs');
+                    return;
+                }
+                break;
+            case 'teacher':
+                if (password === 'teacher') {
+                    // Redirect to hst page
+                    navigate('/hst');
+                    return;
+                }
+                break;
+            case 'doctor':
+                if (password === 'doctor') {
+                    // Redirect to hsd page
+                    navigate('/hsd');
+                    return;
+                }
+                break;
+            default:
+                break;
         }
+    
+        // Handle invalid credentials
+        alert('Invalid username or password');
     };
+    
 
     return (
         <div className={`home-container ${darkTheme ? 'dark-theme' : ''}`}>

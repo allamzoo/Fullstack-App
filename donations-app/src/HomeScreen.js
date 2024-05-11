@@ -226,7 +226,10 @@ const HomeScreen = () => {
         <div class="dropdown">
   <button class="dropbtn"> &#9776;</button>
   <div class="dropdown-content">
+  <Link to="/l" style={{ textDecoration: 'none', marginRight: '10px' }}>
+
     <button>Sign Out</button>
+    </Link>
     <button>Update/Delete Account</button>
   </div>
 </div>
