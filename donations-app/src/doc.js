@@ -29,7 +29,7 @@ function MedicalCasesPage() {
       age: 35,
       gender: 'Male',
       weight: 70,
-      location:<a href="https://maps.app.goo.gl/M3NeUDpA7kJ5zaUKA?g_st=iw"> View on Map</a>,
+      location:<a href="https://maps.app.goo.gl/M3NeUDpA7kJ5zaUKA?g_st=iw">  View on Map</a>,
       address: '123 Makka Street',
       organization: 'EL Nozha Hospital',
       specialty: 'Cardiology',
