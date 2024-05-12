@@ -21,11 +21,11 @@ function Tabbakh() {
         alert(`Uploaded documents: ${filenames.join(', ')}`);
         alert('Redirecting to Dashboard/Home Screen...');
         // You can implement actual redirection logic here
-        window.location.href = '/'; 
+        window.location.href = '/dashboard'; 
     };
     const home = () => {
         
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     };
 
     const renderDocumentUpload = () => {
@@ -39,18 +39,8 @@ function Tabbakh() {
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar" style={{ padding: '20px' }}>
+            <div className="logo-bar">
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
-            </div>
-            <div style={{ padding: '20px', backgroundColor: isDarkTheme ? '#000' : '#fff', color: isDarkTheme ? '#fff' : '#333' }}>
-                <h2 style={{ marginBottom: '20px', fontSize: '1.5rem', color: isDarkTheme ? '#fba2d7' : '#ff69b4' }}>Organization Verification</h2>
-                {/* Render document upload */}
-                {renderDocumentUpload()}
-                {/* Button to upload documents */}
-                <button onClick={uploadDocuments} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>
-                    <FontAwesomeIcon icon={faUpload} style={{ marginRight: '10px' }} />
-                    Upload Documents
-                </button>
                 <div className="button-container">    
                 <label className="theme-switch" htmlFor="theme-switch">
           <input
@@ -67,6 +57,17 @@ function Tabbakh() {
            Home
           </button>
           </div>
+            </div>
+            <div style={{ backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fff' : '#333' }}>
+                <h2 style={{ marginBottom: '20px', fontSize: '1.5rem', color: isDarkTheme ? '#fba2d7' : '#ff69b4' }}>Organization Verification</h2>
+                {/* Render document upload */}
+                {renderDocumentUpload()}
+                {/* Button to upload documents */}
+                <button onClick={uploadDocuments} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>
+                    <FontAwesomeIcon icon={faUpload} style={{ marginRight: '10px' }} />
+                    Upload Documents
+                </button>
+          
             </div>
         </div>
     );

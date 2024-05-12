@@ -22,16 +22,14 @@ function OrganizationDonationPosts() {
     };
     const home = () => {
         
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     };
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
-            <div className="logo-bar" style={{ padding: '20px' }}>
+            <div className="logo-bar">
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
-          
-            </div>
-            <div className="button-container">    
+                <div className="button-container">    
             <label className="theme-switch" htmlFor="theme-switch">
           <input
             type="checkbox"
@@ -47,6 +45,9 @@ function OrganizationDonationPosts() {
            Home
           </button>
           </div>
+          
+            </div>
+           
             <div className="content-wrapper">
                 <h2>Organization Donation Posts</h2>
                 <div style={{ marginTop: '20px' }}>

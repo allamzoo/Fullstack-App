@@ -45,7 +45,7 @@
   .welcome-content h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     font-size: 36px;
     font-weight: bold;
@@ -56,7 +56,7 @@
     font-weight: bold;
     position: absolute;
     top: 70%; /* Adjusted to move the paragraphs down */
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     font-size: 18px;
     text-align: center; /* Center-align the paragraphs */
@@ -72,7 +72,7 @@
     font-weight: bold;
     position: absolute;
     top: 80%; /* Adjusted to move the paragraphs down */
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     font-size: 18px;
     text-align: center; /* Center-align the paragraphs */
@@ -85,17 +85,19 @@
 }
 
 .get-started-button {
-    position: absolute;
-    top: 95%; /* Adjusted to move the button below the paragraphs */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fba2d7;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
+     background-color: #fba2d7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Increase border-radius for a rounder shape */
+  transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+  outline: none; /* Remove outline on focus */
+  margin-top:17%;
+  margin-right: 29%;
 }
 
   

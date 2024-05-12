@@ -37,29 +37,34 @@ function DonationPostt() {
 
   const themeClass = isDarkTheme ? 'dark-theme' : 'light-theme';
 
+  const home = () => {
+        
+    window.location.href = '/dashboard';
+};
   return (
     <div className={`donation1-post ${themeClass}`}>
       {/* Top bar with logo and buttons */}
       <div className="logo-bar" style={{ padding: '20px' }}>
-        <img src={logo} className="logo" alt="Logo" style={{ width: '600px', height: '120px' }} /> 
-        </div>
-        <div className="top-bar-buttons">
-        <button onClick={() => window.location.href = '/'} className="home-button">
-            <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
-            Home
+                <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
+                <div className="button-container">    
+            <label className="theme-switch" htmlFor="theme-switch">
+          <input
+            type="checkbox"
+            id="theme-switch"
+            checked={isDarkTheme}
+            onChange={toggleTheme}
+          />
+          <div className="slider"></div>
+        </label>
+         
+          <button className="home-button" onClick={home}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+           Home
           </button>
-        <label className="theme-switch" htmlFor="theme-switch">
-            <input
-              type="checkbox"
-              id="theme-switch"
-              checked={isDarkTheme}
-              onChange={toggleTheme} // Toggle theme on change
-            />
-            <div className="slider round"></div> {/* Custom slider for theme switch */}
-          </label>
-          
+          </div>
+          </div>   
         
-      </div>
+      
 
       {/* Form for creating a donation post */}
       <div className="form-wrapper">

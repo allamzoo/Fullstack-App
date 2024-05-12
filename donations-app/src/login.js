@@ -20,6 +20,13 @@ function Login() {
                     navigate('/admin');
                     return;
                 }
+                case 'org':
+                if (password === 'org') {
+                     // Redirect to hsd page
+                    navigate('/dashboard');
+                    return;
+                    }
+                    break;
                 break;
             case 'regulardonor':
                 if (password === 'regulardonor') {

@@ -42,15 +42,13 @@ const DonationViewOptions = () => {
 };
 const home = () => {
         
-  window.location.href = '/';
+  window.location.href = '/dashboard';
 };
 const Header = ({ currentView, toggleTheme, resetView, isDarkTheme }) => {
   return (
     <>
       <div className="logo-bar" style={{ padding: '20px' }}>
         <img src={logo} className="logo" alt="Organization Logo" style={{ width: '600px', height: '120px' }} />
-      </div>
-      <div className="top-bar-buttons">
         <label className="theme-switch" htmlFor="theme-switch">
           <input
             type="checkbox"
@@ -60,6 +58,13 @@ const Header = ({ currentView, toggleTheme, resetView, isDarkTheme }) => {
           />
           <span className="slider round"></span> {/* Custom slider for theme switch */}
         </label>
+        <button className="home-button" onClick={home}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+          Home
+        </button>
+      </div>
+      <div className="top-bar-buttons">
+       
 
         {currentView && (
           <button className="view-buttons" onClick={resetView}>
@@ -67,10 +72,7 @@ const Header = ({ currentView, toggleTheme, resetView, isDarkTheme }) => {
           </button>
         )}
 
-        <button className="home-button" onClick={home}>
-          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
-          Home
-        </button>
+        
       </div>
     </>
   );

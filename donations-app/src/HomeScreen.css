@@ -26,16 +26,21 @@
   }
   
   .requested-items li .fulfill-button {
-    background-color: #fba2d7; /* Pink background color for the button */
-    color: #fff; /* White text color */
+    background-color: #fba2d7;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 25px; /* Increase border-radius for a rounder shape */
+    transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+    outline: none; /* Remove outline on focus */
   }
   
   .requested-items li .fulfill-button:hover {
-    background-color: #ff78a9; /* Lighter pink background color on hover */
+    background-color: #790a5f; /* Lighter pink background color on hover */
   }
   
   .requested-items li .fulfilled-sign {
@@ -99,12 +104,12 @@
   }
   
   .theme-switch {
-    position: relative;
+    position: absolute;
     display: inline-block;
     width: 60px;
     height: 34px;
-    left: 1415px;
-    top: 2px;
+    left: 1430px;
+    top: 60px;
   }
   
   .theme-switch input {
@@ -158,18 +163,23 @@
   
   .category-buttons button {
     background-color: #fba2d7;
-    color: #fff;
-    padding: 15px;
-    margin: 5px;
     border: none;
-    border-radius: 2px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 25px; /* Increase border-radius for a rounder shape */
+    transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+    outline: none; /* Remove outline on focus */
   }
   
   .category-buttons button.selected {
     background-color: #790a5f; /* Darker pink background color for selected button */
+   
   }
+ 
   
   .requested-items li {
     position: relative; /* Position relative to contain the emoji */
@@ -421,6 +431,7 @@
   .organization-item:hover {
     background-color: #ebc6d4; /* Light pink background color on hover */
   }
+ 
   
   /* Dark theme */
   .dark-theme .organization-item:hover {
@@ -441,18 +452,7 @@
     color: #fba2d7; /* Pink color for text in dark mode */
   }
 
-  /* HomeScreen.css */
-
-/* Search bar */
-/* HomeScreen.css */
-
-/* Search bar */
-/* HomeScreen.css */
-
-/* Search bar */
-/* HomeScreen.css */
-
-/* Search bar */
+  
 .confirm-button {
     background-color: #fba2d7; /* Pink background color */
     color: #fff; /* White text color */
@@ -467,32 +467,41 @@
   }
 
 .confirm-button, .eta-button {
-    padding: 10px 20px;
-    background-color: #fba2d7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
+  background-color: #fba2d7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Increase border-radius for a rounder shape */
+  transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+  outline: none; /* Remove outline on focus */
   }
   
   .confirm-button:hover, .eta-button:hover {
     background-color: #790a5f;
   }
   .custom-button {
-    background-color: #fba2d7; /* Pink background color */
-    color: #fff; /* White text color */
-    padding: 15px; /* Adjust padding as needed */
-    margin: 5px; /* Adjust margin as needed */
-    border: none; /* No border */
-    border-radius: 20px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+    background-color: #fba2d7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px; /* Increase border-radius for a rounder shape */
+    transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+    outline: none; /* Remove outline on focus */
+    margin-top: 15px;
+    width: 150px;
   }
   
   .custom-button:hover {
     background-color: #790a5f; /* Darker pink background color on hover */
+    transform: scale(1.05); /* Add slight scale effect on hover */
   }
   .categories h2,
 .requested-items h2 {
@@ -509,11 +518,13 @@
   background-color: #fba2d7;
   color: #fff;
   padding: 15px;
-  margin: 5px;
+  margin: 2px;
   border: none;
   border-radius: 20px; /* Adjust the border-radius to make the buttons cylindrical */
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 150px;
+  height: 55px;
 }
 
 .category-buttons button.selected {
@@ -689,7 +700,7 @@
   .hospital-locations {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 10px;
   }
   
   .hospital {
@@ -751,15 +762,17 @@
 }
   
 .submit-button {
-    background-color: #fba2d7;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
+  background-color: #fba2d7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Increase border-radius for a rounder shape */
+  transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+  outline: none; /* Remove outline on focus */
 }
   
 .light-mode-header {
@@ -785,9 +798,11 @@
   }
   /* Dropdown button */
 .dropbtn {
+  margin-top: 20px;
+  margin-left: 100px;
     background-color: #fba2d7;
     color: #fff;
-    padding: 4px;
+    padding: 1px;
     font-size: 23px;
     border: none;
     cursor: pointer;
@@ -820,6 +835,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
+    margin-right: -150px;
     background-color: #fba2d7;
     min-width: 160px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -866,7 +882,7 @@
 }
 .notification-button {
   position: absolute;
-  top: 15px; 
+  top: 47px; 
   right: 100px; 
   width: 50px; /* Set width equal to height for a circular button */
   height: 50px; /* Set height equal to width for a circular button */
@@ -881,9 +897,26 @@
   align-items: center; /* Center vertically */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }
+.sign-button {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  width: 120px; /* Increase the width for all buttons */
+  height: 50px; /* Increase the height for all buttons */
+  border: none;
+  border-radius: 25px; /* Make the buttons slightly rounded */
+  background-color: #fba2d7; /* Set background color */
+  color: white; /* Set text color to white */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  display: flex; /* Use flexbox for centering content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
 .home-button {
   position: absolute;
-  top: 15px;
+  top: 45px;
   right: 100px;
   width: 200px; /* Increase the width for all buttons */
   height: 50px; /* Increase the height for all buttons */
@@ -965,12 +998,13 @@
   padding: 20px;
 }
 .dark-theme .donation-post {
-  background-color: #333;
-  color: #fff;
+  background-color: #555;
+  color: #fba2d7;
 }
 .light-theme .donation-post {
   background-color: #f9f9f9;
-  color: #333;
+  color: #fba2d7;
+  
 }
 .donation-post button {
   background-color: #fba2d7;
@@ -990,12 +1024,14 @@
 .content-wrapper {
   padding: 20px;
   transition: background-color 0.3s, color 0.3s;
-  height: 100%; /* Ensure content wrapper fills parent */
+  height: 50%; /* Ensure content wrapper fills parent */
   display: flex; /* Use flexbox to align content */
   flex-direction: column; /* Stack content vertically */
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
-  position: relative; /* Position relative for absolute positioning */
+  position: relative;
+  color: #fba2d7;
+   /* Position relative for absolute positioning */
 }
 .account-input input {
   width: 100%;
@@ -1079,7 +1115,8 @@
     margin-right: 500px;
     display: flex; /* Flex layout */
     flex-direction: column; /* Vertical alignment */
-    justify-content: center; /* Center vertically */
+    justify-content: center;
+    background-color: #000; /* Center vertically */
   }
    .form-wrapper {
     width: 80%; /* Use most of the width */
@@ -1179,4 +1216,7 @@ button:hover {
 
 .light-theme .form-wrapper1 {
   background-color: white; /* Light top bar */
+}
+.dark-theme .filters h1 {
+  color: #fba2d7;
 }

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { FaDownload, FaCheck, FaTimes, FaMapMarkerAlt } from 'react-icons/fa'; // Importing icons
-import LocationMarker from './google.png'; // Importing the location marker image
 import { MdDone, MdClose } from 'react-icons/md'; // Importing the accept and reject icons
 
 

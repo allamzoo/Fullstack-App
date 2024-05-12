@@ -68,8 +68,10 @@ function SubjectAndClassSelection() {
 <Link to="/l" style={{ textDecoration: 'none' }}>
   <button>Sign Out</button>
   </Link>
-  <button>Update/Delete Account</button>
+  <Link to="/u" style={{ textDecoration: 'none', marginRight: '10px' }}>
 
+<button>Update/Delete Account</button>
+</Link>
 </div>
 </div>
       

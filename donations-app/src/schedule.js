@@ -11,7 +11,7 @@ function ScheduleDropoff() {
  
 
   const handleHomeClick = () => {
-    window.location.href = '/'; // Redirect to home
+    window.location.href = '/dashboard'; // Redirect to home
   };
 
   const handleSubmit = () => {
@@ -26,12 +26,8 @@ function ScheduleDropoff() {
       {/* Top bar with logo and buttons */}
       <div className="logo-bar" style={{ padding: '20px' }}>
         <img src={logo} className="logo" alt="Logo" style={{ width: '600px', height: '120px' }} /> 
-        </div>
-        <div className="top-bar-buttons">
-        <button onClick={() => window.location.href = '/'} className="home-button">
-            <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
-            Home
-          </button>
+        
+        
         <label className="theme-switch" htmlFor="theme-switch">
             <input
               type="checkbox"
@@ -39,11 +35,16 @@ function ScheduleDropoff() {
               checked={isDarkTheme}
               onChange={toggleTheme} // Toggle theme on change
             />
-            <div className="slider round"></div> {/* Custom slider for theme switch */}
+            <div className="slider"></div> {/* Custom slider for theme switch */}
           </label>
-          
+          <button onClick={() => window.location.href = '/dashboard'} className="home-button">
+            <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+            Home
+          </button>
         
       </div>
+        
+        
 
       {/* Form Wrapper */}
       <div className="form-wrapper1">

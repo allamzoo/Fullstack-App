@@ -4,6 +4,7 @@ import logo from './logo.png'; // Importing the logo image
 import { FaHome, FaLock, FaSignOutAlt, FaAngleDown } from 'react-icons/fa'; // Importing icons from react-icons
 import OrganizationDetails from './OrganizationDetails'; // Importing the OrganizationDetails component
 import { FaDownload, FaCheck, FaTimes, FaMapMarkerAlt } from 'react-icons/fa'; // Importing icons
+import { Link } from 'react-router-dom';
 function Homepage() {
     const [showRegisteredDonors, setShowRegisteredDonors] = useState(false);
 const [filterByDonors, setFilterByDonors] = useState(null);
@@ -784,7 +785,10 @@ const handleJobFilterChangeDonors = (event) => {
                     </div>
                 </div>
             )}
-                        <button className="extra-button"><FaSignOutAlt /> Log Out</button>
+              <Link to="/l" style={{ textDecoration: 'none', marginRight: '10px' }}>
+
+                        <button className="extra-button"><FaSignOutAlt /> Sign Out</button>
+                        </Link>
                     </div>
                 )}
             </div>

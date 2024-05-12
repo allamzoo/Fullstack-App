@@ -15,6 +15,7 @@
   align-items: center;
 }
 
+
 .button:hover,
 .extra-button:hover {
   background-color: #D06EAB;
@@ -81,8 +82,8 @@ body.dark-theme {
   border: 2px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 75px;
-  right: 70px;
+  top: 35px;
+  right: 20px;
   z-index: 999;
   cursor: pointer;
 }
@@ -101,62 +102,66 @@ body.dark-theme {
 .nav-button {
   background-color: #FBA2D7;
   position: fixed;
-  left: 30%;
+  left: 25%;
   top: 36%;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   margin-right: 10px; /* Add right margin for spacing between buttons */
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 290px;
-  height: 65px;
+  height: 80px;
+  font-size: 20px;
 }
 .nav-button1 {
   background-color: #FBA2D7;
   position: fixed;
-  right: 30%;
+  right: 25%;
   top: 36%;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px; /* Increase padding for larger button */
   margin-right: 10px; /* Add right margin for spacing between buttons */
-  border-radius: 5px;
+  border-radius: 8px; /* Increase border-radius for rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 290px;
-  height: 65px;
+  width: 290px; /* Allow button width to adjust based on content */
+  height: 80px; /* Increase height for a bigger button */
+  font-size: 20px; /* Increase font size for better readability */
 }
 .nav-button2 {
   background-color: #FBA2D7;
   position: fixed;
-  left: 30%;
+  left: 25%;
   bottom: 33.33333%;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   margin-right: 10px; /* Add right margin for spacing between buttons */
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 290px;
-  height: 65px;
+  height: 80px;
+  font-size: 20px;
 }
 .nav-button3 {
   background-color: #FBA2D7;
   position: fixed;
-  right: 30%;
+  right: 25%;
   bottom: 33.33333%;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   margin-right: 10px; /* Add right margin for spacing between buttons */
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 290px;
-  height: 65px;
+  height: 80px;
+  font-size: 20px;
 }
 
 .nav-button:last-child {
@@ -325,18 +330,26 @@ a{
 }
 .filter-dropdown select {
   background-color: white;
-  color: black; /* Set background color for the select element */
+  color: black;
+  border: 1px solid #ccc; /* Add border for clarity */
   border-radius: 5px;
-  height: 25px;
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 14px; /* Adjust font size */
   width: fit-content;
+  transition: all 0.3s ease; /* Add transition for smooth changes */
+  height: 40px;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
-.dark-theme .filter-dropdown select{
-    background-color: #333;
-    color: #FBA2D7; /* Set background color for the select element */
-    border-radius: 5px;
-    height: 25px;
-    width: fit-content;
+
+.dark-theme .filter-dropdown select {
+  background-color: #333;
+  color: #FBA2D7;
+  border-color: #666; /* Adjust border color for dark theme */
+  padding: 8px; /* Adjust padding for dark theme */
+  font-size: 14px; /* Adjust font size for dark theme */
 }
+
 
 .sort-dropdown {
   position: absolute;
@@ -344,20 +357,25 @@ a{
   left: 150px; /* Adjust as needed */
   margin: 10px;
 }
-.sort-dropdown select{
+.sort-dropdown select {
   background-color: white;
-  color: black; /* Set background color for the select element */
+  color: black;
   border-radius: 5px;
-  height: 25px;
+  height: 40px;
   width: fit-content;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
-.dark-theme .sort-dropdown select{
-    background-color: #333;
-  color: #FBA2D7; /* Set background color for the select element */
+
+.dark-theme .sort-dropdown select {
+  background-color: #333;
+  color: #FBA2D7;
   border-radius: 5px;
-  height: 25px;
   width: fit-content;
+  margin-left: 20px; /* Move the dropdown 10px to the right */
 }
+
 /* Add this CSS to your stylesheet */
 
 

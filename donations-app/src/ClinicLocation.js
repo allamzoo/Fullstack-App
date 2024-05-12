@@ -43,7 +43,7 @@ function ClinicLocation() {
 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  const toggleTheme = () => {
+  const toggleTheme = () =>  {
     setIsDarkTheme(!isDarkTheme);
   };
 
@@ -60,22 +60,21 @@ function ClinicLocation() {
         />
         <div className="slider round"></div>
       </label>
-      <div class="dropdown">
-<button class="dropbtn"> &#9776;</button>
-<div class="dropdown-content">
-<Link to="/hs" style={{ textDecoration: 'none' }}>
-
-<HomeButton />
-</Link>
-
-<Link to="/l" style={{ textDecoration: 'none' }}>
-  <button>Sign Out</button>
-  </Link>
-  <button>Update/Delete Account</button>
-
-</div>
-</div>
       
+      <div class="dropdown">
+  <button class="dropbtn"> &#9776;</button>
+  <div class="dropdown-content">
+  <HomeButton />
+
+  <Link to="/l" style={{ textDecoration: 'none' }}>
+
+    <button>Sign Out</button>
+    </Link>
+    <Link to="/u" style={{ textDecoration: 'none' }}>
+
+    <button>Update/Delete Account</button>
+    </Link>  </div>
+</div>
     </div>
       <div className="clinic-location-container">
         <h2>Clinic Location Specification</h2>

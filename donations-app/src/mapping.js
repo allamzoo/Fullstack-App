@@ -19,21 +19,37 @@ function LocationMappingScreen() {
         const address = `${street}, ${city}, ${state}, ${postal}, ${country}`;
         alert(`Location saved/updated:\n${address}`);
         alert('Redirecting to Dashboard/Home Screen...');
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     };
     const home = () => {
         
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     };
 
     return (
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
             <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
+                <div className="button-container">    
+            <label className="theme-switch" htmlFor="theme-switch">
+          <input
+            type="checkbox"
+            id="theme-switch"
+            checked={isDarkTheme}
+            onChange={toggleTheme}
+          />
+          <div className="slider"></div>
+        </label>
+         
+          <button className="home-button" onClick={home}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
+           Home
+          </button>
+          </div>
             </div>
             <div className="center-content" style={{ position: 'relative', padding: '10px', marginTop: '90px' }}>
                 <h2 style={{ marginBottom: '10px', fontSize: '1.5rem', textAlign: 'center', color: isDarkTheme ? '#fba2d7' : '#333' }}>Location Mapping Screen</h2>
-                <img src={mapImage} alt="map" style={{ width: '15%', marginBottom: '10px', display: 'block', margin: '0 auto' }} />
+                <img src={mapImage} alt="map" style={{ width: '15%', marginBottom: '10px', display: 'block', margin: '0 auto', background: isDarkTheme ? '#333' : '#fff' }} />
                 <div className="address-input" style={{ marginBottom: '10px', textAlign: 'center' }}>
                     <label htmlFor="street" style={{ fontSize: '1rem', color: isDarkTheme ? '#fba2d7' : '#ff69b4' }}>Street Address:</label>
                     <input type="text" id="street" value={street} onChange={(e) => setStreet(e.target.value)} style={{ width: '100%', padding: '5px', boxSizing: 'border-box', fontSize: '0.8rem', backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fba2d7' : '#ff69b4' }} />
@@ -58,22 +74,7 @@ function LocationMappingScreen() {
                     <button onClick={saveLocation} className="common-button" style={{ width: '300px', fontSize: '0.8rem' }}>Save/Update Location</button>
                 </div>
             </div>
-            <div className="button-container">    
-            <label className="theme-switch" htmlFor="theme-switch">
-          <input
-            type="checkbox"
-            id="theme-switch"
-            checked={isDarkTheme}
-            onChange={toggleTheme}
-          />
-          <div className="slider"></div>
-        </label>
-         
-          <button className="home-button" onClick={home}>
-          <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
-           Home
-          </button>
-          </div>
+            
         </div>
     );
 }

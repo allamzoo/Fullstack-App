@@ -54,7 +54,7 @@ function ViewRegisteredOrganizations() {
         contact: 'John Doe',
         email: 'contact@organizationA.com',
         address: '123 Street, Heliopolis, Cairo',
-        location: 'Coordinates: (XX.XXXXXX, YY.YYYYYY)',
+        location:  <p>Al Nas Hospital<a href="https://maps.app.goo.gl/jfJJnV6DP7rTBS1Z7?g_st=iw"> View on Map</a></p>
       },
       {
         id: 2,
@@ -65,7 +65,7 @@ function ViewRegisteredOrganizations() {
         contact: 'Jane Smith',
         email: 'contact@organizationB.com',
         address: '456 Street, Dokki, Giza',
-        location: 'Coordinates: (AA.AAAAAA, BB.BBBBBB)',
+        location: <p>57357 Hospital<a href="https://maps.app.goo.gl/6cT3H4XcAUDhLhhK7?g_st=iw"> View on Map</a></p>,
       },
       // Add more organizations as needed
     ];
@@ -112,22 +112,22 @@ function ViewRegisteredOrganizations() {
       <div class="dropdown">
 <button class="dropbtn"> &#9776;</button>
 <div class="dropdown-content">
-<Link to="/hs" style={{ textDecoration: 'none' }}>
 
 <HomeButton />
-</Link>
 
 <Link to="/l" style={{ textDecoration: 'none' }}>
   <button>Sign Out</button>
   </Link>
-  <button>Update/Delete Account</button>
+  <Link to="/u" style={{ textDecoration: 'none', marginRight: '10px' }}>
 
+<button>Update/Delete Account</button>
+</Link>
 </div>
 </div>
       
     </div>
       <div className="organization-list">
-        <h2>Registered Organizations</h2>
+        
         {/* Search bar */}
         <div className="search-bar" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
   <input 
@@ -136,7 +136,7 @@ function ViewRegisteredOrganizations() {
     value={searchQuery} 
     onChange={handleSearchChange} 
     style={{
-      padding: '12px', // Increase padding for bigger size
+      padding: '13px', // Increase padding for bigger size
       width: '70%', // Adjust width as needed
       maxWidth: '400px', // Limit maximum width
       border: '1px solid #ccc', 
@@ -146,6 +146,7 @@ function ViewRegisteredOrganizations() {
 </div>
         {/* Filter options */}
         <div className="filters">
+        <h2>Registered Organizations</h2>
           <h3>Filter Options</h3>
           <div className="filter-options">
             <div className="filter-option">

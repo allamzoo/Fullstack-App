@@ -25,7 +25,7 @@ function TeachingPostsPage() {
       governorate: 'Cairo',
       numberOfStudents: 30,
       address: '123 Madina street',
-      mapMarker: 'Coordinates: (XX.XXXXXX, YY.YYYYYY)',
+      mapMarker:  <p>New Helipless modern School<a href="https://maps.app.goo.gl/QhNnAut5iintH1459?g_st=iw"> View on Map</a></p>,
       fulfilled: false, // Add fulfilled property
     },
     {
@@ -35,7 +35,7 @@ function TeachingPostsPage() {
       governorate: 'Giza',
       numberOfStudents: 25,
       address: '456 Haram street',
-      mapMarker: 'Coordinates: (AA.AAAAAA, BB.BBBBBB)',
+      mapMarker: <p>Al Haram Primary School<a href="https://maps.app.goo.gl/dcJ8ePXqUXDDfsGM6?g_st=iw"> View on Map</a></p>,
       fulfilled: false, // Add fulfilled property
     },
     // Add more sample teaching posts as needed
@@ -139,8 +139,10 @@ function TeachingPostsPage() {
 <Link to="/l" style={{ textDecoration: 'none' }}>
   <button>Sign Out</button>
   </Link>
-  <button>Update/Delete Account</button>
+  <Link to="/u" style={{ textDecoration: 'none', marginRight: '10px' }}>
 
+<button>Update/Delete Account</button>
+</Link>
 </div>
 </div>
       
@@ -148,7 +150,7 @@ function TeachingPostsPage() {
     
       {/* Filter options */}
       <div className="filters">
-      <h1>View Teaching Posts</h1>
+      <h1>Teaching Posts</h1>
         <h2>Filter Options</h2>
         <div className="filter-options">
           <div className="filter-option">

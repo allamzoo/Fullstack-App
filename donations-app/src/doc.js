@@ -29,7 +29,7 @@ function MedicalCasesPage() {
       age: 35,
       gender: 'Male',
       weight: 70,
-      location: 'Coordinates: (XX.XXXXXX, YY.YYYYYY)',
+      location:<a href="https://maps.app.goo.gl/M3NeUDpA7kJ5zaUKA?g_st=iw"> View on Map</a>,
       address: '123 Makka Street',
       organization: 'EL Nozha Hospital',
       specialty: 'Cardiology',
@@ -44,7 +44,7 @@ function MedicalCasesPage() {
       age: 5,
       gender: 'Female',
       weight: 65,
-      location: 'Coordinates: (AA.AAAAAA, BB.BBBBBB)',
+      location:<a href="https://maps.app.goo.gl/fPnVc5LTz2UiUfMEA?g_st=iw"> View on Map</a>,
       address: '456 Elmosher Street',
       organization : 'EL Nas',
       specialty: 'Orthopedics',
@@ -152,14 +152,16 @@ function MedicalCasesPage() {
 <Link to="/l" style={{ textDecoration: 'none' }}>
   <button>Sign Out</button>
   </Link>
-  <button>Update/Delete Account</button>
+  <Link to="/u" style={{ textDecoration: 'none', marginRight: '10px' }}>
 
-</div>
+<button>Update/Delete Account</button>
+</Link></div>
 </div>
       
     </div>
       {/* Filter options */}
       <div className="filters">
+        <h2>Medical Posts</h2>
   <h3>Filter Options</h3>
   <div className="filter-options">
     <div className="filter-option">

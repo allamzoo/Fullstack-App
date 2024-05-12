@@ -27,11 +27,11 @@ function AccountSettings() {
         // Redirect to Dashboard/Home Screen (simulated with an alert)
         alert('Redirecting to Dashboard/Home Screen...');
         // You can implement actual redirection logic here
-        window.location.href = '/'; 
+        window.location.href = '/dashboard'; 
     };
     const home = () => {
         
-        window.location.href = '/';
+        window.location.href = '/dashboard';
     };
 
     const deleteAccount = () => {
@@ -50,22 +50,7 @@ function AccountSettings() {
         <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
             <div className="logo-bar" style={{ padding: '20px' }}>
                 <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
-            </div>
-            <div style={{ padding: '20px', position: 'relative' }}>
-                <h2 style={{ marginBottom: '20px', fontSize: '1.5rem', color: isDarkTheme ? '#fba2d7' : '#333' }}>Account Settings</h2>
-                <div className="account-input" style={{ marginBottom: '20px' }}>
-                    <label htmlFor="name" style={{ fontSize: '1rem', color: isDarkTheme ? '#fba2d7' : '#333' }}>Name:</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} style={{ width: '100%', padding: '8px', boxSizing: 'border-box', fontSize: '1rem', backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fba2d7' : '#333' }} />
-                </div>
-                <div className="account-input" style={{ marginBottom: '20px' }}>
-                    <label htmlFor="email" style={{ fontSize: '1rem', color: isDarkTheme ? '#fba2d7' : '#333' }}>Email:</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} style={{ width: '100%', padding: '8px', boxSizing: 'border-box', fontSize: '1rem', backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fba2d7' : '#333' }} />
-                </div>
-                {/* Add more input fields as needed */}
-                <button onClick={saveAccountInfo} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>Save Account Info</button>
-                <button onClick={deleteAccount} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>Delete account</button>
-            </div>
-            <div className="button-container">    
+                <div className="button-container">    
             <label className="theme-switch" htmlFor="theme-switch">
           <input
             type="checkbox"
@@ -81,6 +66,22 @@ function AccountSettings() {
            Home
           </button>
           </div>
+            </div>
+            <div style={{ padding: '20px', position: 'relative' }}>
+                <h2 style={{ marginBottom: '20px', fontSize: '1.5rem', color: isDarkTheme ? '#fba2d7' : '#fba2d7' }}>Account Settings</h2>
+                <div className="account-input" style={{ marginBottom: '20px' }}>
+                    <label htmlFor="name" style={{ fontSize: '1rem', color: isDarkTheme ? '#fba2d7' : '#fba2d7' }}>Name:</label>
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} style={{ width: '100%', padding: '8px', boxSizing: 'border-box', fontSize: '1rem', backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fba2d7' : '#333' }} />
+                </div>
+                <div className="account-input" style={{ marginBottom: '20px' }}>
+                    <label htmlFor="email" style={{ fontSize: '1rem', color: isDarkTheme ? '#fba2d7' : '#fba2d7' }}>Email:</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} style={{ width: '100%', padding: '8px', boxSizing: 'border-box', fontSize: '1rem', backgroundColor: isDarkTheme ? '#333' : '#fff', color: isDarkTheme ? '#fba2d7' : '#333' }} />
+                </div>
+                {/* Add more input fields as needed */}
+                <button onClick={saveAccountInfo} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>Save Account Info</button>
+                <button onClick={deleteAccount} style={{ padding: '10px 20px', fontSize: '1rem', backgroundColor: '#fba2d7', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginBottom: '20px' }}>Delete account</button>
+            </div>
+            
         </div>
     );
 }

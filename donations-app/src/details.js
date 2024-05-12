@@ -184,9 +184,8 @@ function DonationDetails() {
       {/* Top bar with logo and buttons */}
       <div className="logo-bar" style={{ padding: '20px' }}>
         <img src={logo} className="logo" alt="Logo" style={{ width: '600px', height: '120px' }} /> 
-        </div>
         <div className="top-bar-buttons">
-        <button onClick={() => window.location.href = '/'} className="home-button">
+        <button onClick={() => window.location.href = '/dashboard'} className="home-button">
             <FontAwesomeIcon icon={faHome} style={{ marginRight: '10px' }} />
             Home
           </button>
@@ -202,6 +201,8 @@ function DonationDetails() {
           
         
       </div>
+        </div>
+       
 
       <div className="form-wrapper1">
         <h2>Enter Donation Details</h2>

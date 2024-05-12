@@ -166,6 +166,105 @@ const HomeScreenDR = () => {
     { id: 11, name: 'A+ Blood Type', category: 'Blood Donations', hospital: 'Hospital B', governorate: 'Governorate Y', area: 'Area Z', description: 'Blood type A+ urgently needed', quantity: 7, quantitySelected: 0 },
     { id: 12, name: 'Summer Jacket', category: 'Clothes', age: 'Child', gender: 'Male', season: 'Summer', description: 'Thin summer jacket for adults', quantity: 15, quantitySelected: 0 },
     { id: 13, name: 'Antibiotic', category: 'Medical Supplies', type: 'Medication', medicationUse: 'Antibiotics', description: 'Antibiotic medication for infections', quantity: 25, quantitySelected: 0 },
+    { 
+      id: 14, 
+      name: 'Raincoat', 
+      category: 'Clothes', 
+      age: 'Adult', 
+      gender: 'Unisex', 
+      season: 'Spring', 
+      description: 'Waterproof raincoat for protection during rainy weather', 
+      quantity: 18, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 15, 
+      name: 'Robot Action Figure', 
+      category: 'Toys', 
+      age: 'Child', 
+      gender: 'Male', 
+      toyCategory: 'Action Figures', 
+      description: 'Robot action figure toy for adventurous play', 
+      quantity: 12, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 16, 
+      name: 'Rice', 
+      category: 'Food', 
+      description: 'Bag of rice for staple food supply', 
+      type: 'Grains', 
+      quantity: 50, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 17, 
+      name: 'Notebooks', 
+      category: 'School Supplies', 
+      type: 'Books', 
+      description: 'Set of notebooks for classroom note-taking', 
+      quantity: 35, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 18, 
+      name: 'Markers', 
+      category: 'School Supplies', 
+      type: 'Stationary', 
+      description: 'Pack of colorful markers for creative projects', 
+      quantity: 25, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 19, 
+      name: 'Dollhouse', 
+      category: 'Toys', 
+      age: 'Child', 
+      gender: 'Female', 
+      toyCategory: 'Dolls', 
+      description: 'Miniature dollhouse for imaginative play', 
+      quantity: 7, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 20, 
+      name: 'Disposable Gloves', 
+      category: 'Medical Supplies', 
+      type: 'Medical Supplies', 
+      description: 'Disposable gloves for hygienic purposes', 
+      quantity: 40, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 21, 
+      name: 'Thermometer', 
+      category: 'Medical Supplies', 
+      type: 'Medical Devices', 
+      description: 'Digital thermometer for temperature measurement', 
+      quantity: 15, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 22, 
+      name: 'Antacid Tablets', 
+      category: 'Medical Supplies', 
+      type: 'Medication', 
+      medicationUse: 'Digestive Health', 
+      description: 'Antacid tablets for relief from acidity', 
+      quantity: 30, 
+      quantitySelected: 0 
+    },
+    { 
+      id: 23, 
+      name: 'AB- Blood Type', 
+      category: 'Blood Donations', 
+      hospital: 'Hospital D', 
+      governorate: 'Governorate W', 
+      area: 'Area V', 
+      description: 'Blood type AB- urgently needed', 
+      quantity: 8, 
+      quantitySelected: 0 
+    },
 // Add more medication items for testing with different medication uses
   ];
 
@@ -234,8 +333,11 @@ const HomeScreenDR = () => {
   <Link to="/l" style={{ textDecoration: 'none', marginRight: '10px' }}>
 
 <button>Sign Out</button>
-</Link>    <button>Update/Delete Account</button>
-  </div>
+</Link>    
+<Link to="/u" style={{ textDecoration: 'none', marginRight: '10px' }}>
+
+<button>Update/Delete Account</button>
+</Link>  </div>
 </div>
 
       </div>

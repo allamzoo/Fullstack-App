@@ -3,6 +3,8 @@ import logo from './logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import './HomeScreen.css'; // Import the CSS file for styling
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function UpdateAccount() {
     const [formData, setFormData] = useState({
@@ -17,6 +19,17 @@ function UpdateAccount() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
+    const HomeButton = () => {
+        const navigate = useNavigate();
+      
+        const handleHomeClick = () => {
+          navigate(-1); // Go back to the previous page
+        };
+      
+        return (
+          <button onClick={handleHomeClick}>Back</button>
+        );
+      };
 
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
@@ -47,23 +60,34 @@ function UpdateAccount() {
 
     return (
         <div className={isDarkTheme ? 'home-container dark-theme' : 'home-container'}>
-            <div className="top-bar">
-                <img src={logo} className="logo" alt="logo" />
-                <div className="theme-switch">
-                    <label className="switch">
-                        <input type="checkbox" onChange={toggleTheme} />
-                        <span className="slider round"></span>
-                    </label>
-                    <div class="dropdown">
-  <button class="dropbtn"> &#9776;</button>
-  <div class="dropdown-content">
-    <button>Sign Out</button>
-    <button>Update/Delete Account</button>
-    <buttons>Home</buttons>
-  </div>
-</div>
-                </div>
-            </div>
+        <div className="top-bar">
+          <img src={logo} alt="Logo" className="logo" />
+          <label className="theme-switch" htmlFor="theme-switch">
+            <input
+              type="checkbox"
+              id="theme-switch"
+              checked={isDarkTheme}
+              onChange={toggleTheme}
+            />
+            <div className="slider round"></div>
+          </label>
+          <div class="dropdown">
+    <button class="dropbtn"> &#9776;</button>
+    <div class="dropdown-content">
+    <Link to="/hs" style={{ textDecoration: 'none' }}>
+    
+    <HomeButton />
+    </Link>
+    
+    <Link to="/l" style={{ textDecoration: 'none' }}>
+      <button>Sign Out</button>
+      </Link>
+   
+    </div>
+    </div>
+          
+        </div>
+        
             <div style={{ padding: '20px', position: 'relative', textAlign: 'center' }}>
                 <h5 style={{ marginBottom: '20px', fontSize: '1.5rem' }}>Update/Delete Account Information</h5>
                 <div className="account-input" style={{ marginBottom: '20px' }}>

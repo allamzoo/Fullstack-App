@@ -56,28 +56,54 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 210px;
+    margin-top: 120px;
   }
   
-  .input-field {
-    width: 300px;
-    height: 40px;
-    padding: 10px;
+  .login-container .input-field {
+    width: 400px; /* Increase width for a bigger input field */
+    height: 50px; /* Increase height for a taller input field */
+    padding: 20px; /* Adjust padding for better spacing */
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 10px; /* Increase border-radius for rounded corners */
+    font-size: 18px; /* Increase font size for better visibility */
   }
   
-  .login-button {
+  /* Modern styling for the input field border */
+  .input-field {
+    border: 2px solid #fba2d7; /* Pink border color */
+  }
+  
+  
+  .login-button{
     background-color: #fba2d7;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Increase border-radius for a rounder shape */
+  transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+  outline: none; /* Remove outline on focus */
+  width:200px;
+  height: 70px;
+  }
+  .register-button {
+    background-color: #fba2d7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Increase border-radius for a rounder shape */
+  transition: background-color 0.3s ease, transform 0.2s; /* Add transition for smoother hover effect */
+  outline: none; /* Remove outline on focus */
+  width:200px;
+  height: 70px;
+  margin-top: -20px;
   }
   
   /* Dark theme styles */
@@ -108,30 +134,32 @@ body {
     justify-content: center;
     margin-top: 20px;
   }
-  
-  .register-button {
-    background-color: #fba2d7;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 8px;
-  }
+ 
+  .login-button:hover,
+.register-button:hover {
+  background-color: #790a5f; /* Change background color on hover */
+  transform: scale(1.05); /* Add slight scale effect on hover */
+}
+.register-button {
+  padding: 20px 40px; /* Increase padding for a more spacious feel */
+}
   
   /* Additional styles for related text */
   .login-container p {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
   }
   .registration-text {
-    margin-top: 40px; /* Adjust margin to move the text down */
+    margin-bottom: 20px; /* Add margin-bottom to create space between text and buttons */
     text-align: center;
-    font-size: 16px;
-    color: #666; /* Dark gray color */
+    font-size: 20px; /* Increase font size for emphasis */
+    color: #333; /* Dark color for better readability */
+    font-weight: bold; /* Add bold font weight for emphasis */
+    text-transform: uppercase; /* Convert text to uppercase for emphasis */
+    letter-spacing: 0.5px; /* Add slight letter spacing for better readability */
   }
+
   
   .dark-theme .registration-text {
     color: #fff; /* White color in dark theme */

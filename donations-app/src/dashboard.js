@@ -31,11 +31,6 @@ function Dashboard() {
     <div className={isDarkTheme ? 'full-screen dark-theme' : 'full-screen light-theme'}>
       <div className="logo-bar" style={{ padding: '20px' }}>
         <img src={logo} className="logo" alt="logo" style={{ width: '600px', height: '120px' }} />
-      </div>
-      <header className="App-header">
-        <p style={{ fontSize: '3rem', color: '#fba2d7', textAlign: 'center' }}>
-          Welcome to Dashboard!
-        </p>
         <div className="button-container">
         <label className="theme-switch" htmlFor="theme-switch">
           <input
@@ -47,11 +42,15 @@ function Dashboard() {
           <div className="slider"></div>
         </label>
           
+        <Link to="/l" style={{ textDecoration: 'none', marginRight: '10px' }}>
+            <button className="sign-button">sign out</button>
+          </Link>
           <button className="notification-button" onClick={fetchNotifications}>
             {/* Add your notification icon or shape here */}
             <span className="notification-icon">🔔</span>
             {notifications.length > 0 && <span className="notification-badge">{notifications.length}</span>}
           </button>
+          
           
           {showNotifications && (
             <div className="popup1">
@@ -65,9 +64,16 @@ function Dashboard() {
             </div>
           )}
         </div>
+      </div>
+      <header className="App-header">
+        <p style={{ fontSize: '3rem', color: '#fba2d7', textAlign: 'center' }}>
+          Welcome to Dashboard!
+        </p>
+        
+        
         {/* Additional buttons */}
         <div className="button-pair-container">
-          <Link to="/location" style={{ textDecoration: 'none', marginRight: '10px' }}>
+          <Link to="/locations" style={{ textDecoration: 'none', marginRight: '10px' }}>
             <button className="common-button">Go to Location Mapping</button>
           </Link>
           <Link to="/another-location" style={{ textDecoration: 'none', marginRight: '10px' }}>
@@ -96,7 +102,7 @@ function Dashboard() {
             <button className="common-button">Views Options</button>
           </Link>
         </div>
-      </header>
+        </header>
     </div>
   );
 }

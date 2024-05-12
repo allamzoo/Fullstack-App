@@ -1,5 +1,3 @@
-// DonationPopup.js
-
 import React, { useState } from 'react';
 import './HomeScreen.css';
 import TimePickerr from './TimePickerr';
@@ -11,8 +9,8 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
   const [selectedTransportation, setSelectedTransportation] = useState('');
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
   const [showETA, setShowETA] = useState(false);
-  const [showConfirmation, setShowConfirmation] = useState(false); // State for pickup confirmation
-  const [showDriverArrival, setShowDriverArrival] = useState(false); // State for driver arrival notification
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showDriverArrival, setShowDriverArrival] = useState(false);
   const [eta, setETA] = useState('');
 
   const handleTransportationChange = (e) => {
@@ -21,30 +19,27 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
 
   const handleTimeSlotChange = (time) => {
     setSelectedTimeSlot(time);
-    // Calculate ETA based on selected time slot
-    const calculatedETA = calculateETA(time); // Implement calculateETA function
+    const calculatedETA = calculateETA(time);
     setETA(calculatedETA);
   };
 
-  // Function to calculate ETA based on selected time slot
   const calculateETA = (timeSlot) => {
     // Implement your logic to calculate ETA based on the selected time slot
   };
 
   const handleConfirm = () => {
-    setShowConfirmation(true); // Show pickup confirmation
+    setShowConfirmation(true);
+    setTimeout(() => {
+      setShowDriverArrival(true);
+    }, 10000); // 10 seconds delay
   };
 
   const handleViewETA = () => {
-    setShowETA(true); // Show ETA notification
-  };
-  
-  const handleCloseETA = () => {
-    setShowETA(false); // Hide ETA notification
+    setShowETA(true);
   };
 
-  const handleDriverArrival = () => {
-    setShowDriverArrival(true); // Show driver arrival notification
+  const handleCloseETA = () => {
+    setShowETA(false);
   };
 
   return (
@@ -52,7 +47,7 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
       <div className="popup-content">
         <span className="close" onClick={onClose}>&times;</span>
         <h2>Donation Pickup</h2>
-        <div className="custom-dropdown"> {/* Apply custom-dropdown class */}
+        <div className="custom-dropdown">
           <select
             id="transportation"
             value={selectedTransportation}
@@ -73,16 +68,15 @@ const DonationPopup = ({ onClose, availableTimeSlots, transportationOptions }) =
         </div>
         <button className="eta-button" onClick={handleViewETA}>View ETA</button>
         <button className="confirm-button" onClick={handleConfirm}>Confirm Donation</button>
-        {showETA && <ETANotificationn eta={eta} onClose={handleCloseETA} />} {/* Render ETA notification if showETA is true */}
+        {showETA && <ETANotificationn eta={eta} onClose={handleCloseETA} />}
         {showConfirmation && (
           <PickupConfirmationn
             onClose={() => {
               setShowConfirmation(false);
-              handleDriverArrival(); // Trigger driver arrival notification after closing confirmation pop-up
             }}
           />
-        )} {/* Render Pickup Confirmation if showConfirmation is true */}
-        {showDriverArrival && <DriverArrivalNotificationn onClose={() => setShowDriverArrival(false)} />} {/* Render Driver Arrival Notification if showDriverArrival is true */}
+        )}
+        {showDriverArrival && <DriverArrivalNotificationn onClose={() => setShowDriverArrival(false)} />}
       </div>
     </div>
   );
