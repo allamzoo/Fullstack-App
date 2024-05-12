@@ -271,7 +271,7 @@ const renderRegisteredOrganizations = () => {
     const [selectedFilter, setSelectedFilter] = useState(""); 
     const [filteredOrganizations, setFilteredOrganizations] = useState([]); // State to manage registered organizations
     const donorRequests = [
-        { name: "Seif El Sheikh", age: 20, bloodType: "O", location: "Loc1", job: "Doctor", number: "01159363232", documents:"Dummy.pdf"},
+        { name: "Seif El Sheikh", age: 20, bloodType: "O", location: <a href="https://maps.app.goo.gl/M3NeUDpA7kJ5zaUKA?g_st=iw">  View on Map</a>, job: "Doctor", number: "01159363232", documents:"Dummy.pdf"},
         { name: "Marwan Allam", age: 21, bloodType: "A", location: "Loc2", job: "Teacher", number: "01288205533", documents:"Dummy.pdf" },
         { name: "Ahmed ElTabbakh", age: 20, bloodType: "B", location: "Loc3", job: "Teacher", number: "01111645577" , documents:"Dummy.pdf"},
         { name: "Mohamed Wassef", age: 21, bloodType: "A", location: "Loc4", job: "Teacher", number: "01206542409" , documents:"Dummy.pdf"},
